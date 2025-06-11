@@ -55,8 +55,8 @@ export default function StickyScroll({ content }) {
               }}
               className="min-h-[30vh]"
             >
-              <h3 className="text-2xl font-bold text-sky-900 mb-4">{item.title}</h3>
-              <p className="text-sky-700">{item.content}</p>
+              <h3 className="text-4xl font-bold text-sky-900 my-10">{item.title}</h3>
+              <p className="text-sky-700 text-2xl">{item.content}</p>
             </div>
           ))}
         </div>

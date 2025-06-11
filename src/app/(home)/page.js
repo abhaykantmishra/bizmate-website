@@ -70,6 +70,7 @@ export default function Home() {
         />
         {/* Radial gradient for the container to give a faded look */}
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_50%,black)] dark:bg-black"></div>
+        
         <div>
           <Hero />
           <Services />  

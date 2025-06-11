@@ -59,7 +59,7 @@ export function Hero() {
           <h3 className="text-2xl font-medium ">Developing Robust HR Process</h3>
           <h3 className="text-2xl font-medium mb-5 ">Aligning HR with Business </h3>
           <p className="font-serif text-2xl max-w-[35rem]">
-            Content Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore suscipit, praesentium provident culpa nam nihil odio, ad natus amet minima quos aliquid nostrum quam harum doloribus sit atque quidem obcaecati.
+            At Bizmate HR Solutions, we believe in the power of people. We understand that the success of any organization hinges on its ability to attract, develop, and retain top talent. That&apos;s where we come in - your trusted partner in navigating the ever-evolving landscape of Human Resources.
           </p>
           <div className="flex flex-row mt-20">
             <Link href="/contact">
