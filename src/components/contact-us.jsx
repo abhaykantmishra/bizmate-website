@@ -7,7 +7,7 @@ import Link from "next/link"
 
 export function ContactForm() {
   return (
-    <section className="md:my-40 my-10">
+    <section className="md:mt-40 mb-10 my-10">
         <div className="max-w-[1400px] mx-auto flex flex-col justify-center">
             <div className="flex md:flex-row  flex-col bg-black shadow-2xl shadow-blue-700 p-3 rounded-none md:rounded-lg z-20 md:px-10 mx-2 md:mx-10">
 

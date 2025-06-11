@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { ContactForm } from "@/components/contact-us";
+import Faq from "@/components/faq";
 
 export default function ContactPage() {
 
@@ -66,6 +67,7 @@ export default function ContactPage() {
             <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_50%,black)] dark:bg-black"></div>
             <div className="w-full">
                 <ContactForm />
+                <Faq />
             </div>
         </div>
     </main>
