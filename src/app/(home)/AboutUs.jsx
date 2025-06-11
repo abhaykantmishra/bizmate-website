@@ -20,8 +20,8 @@ const aboutContent = [
 
 export function AboutUs() {
     return (
-        <section className="py-20 bg-sky-50">
-        <div className="container">
+        <section className="my-20">
+        <div className="container mx-auto">
           <h2 className="text-3xl sticky font-bold text-sky-950 mb-12 text-center">About Us</h2>
           <StickyScroll content={aboutContent} />
         </div>
