@@ -3,6 +3,7 @@
 import { useRef, useState, useEffect } from "react"
 import Image from "next/image"
 import { useInView } from "react-intersection-observer"
+import { image_url } from "@/constant/image"
 
 
 export default function StickyScroll({ content }) {
@@ -62,10 +63,10 @@ export default function StickyScroll({ content }) {
         <div className="relative hidden md:block">
           <div className="sticky top-24">
             <div className="relative h-[60vh] w-full">
-              <Image
-                src={`/placeholder.svg?height=600&width=500&text=About+BizMate`}
+              <img
+                src={`${image_url}`}
                 alt="About BizMate HR Solutions"
-                fill
+                // fill
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-sky-100/30 to-white/30" />
