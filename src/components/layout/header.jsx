@@ -39,8 +39,8 @@ export function Header() {
   const [isOpen, setIsOpen] = React.useState(false)
 
   return (
-    <header className={`h-20 sticky top-0 z-50 w-full border-b border-white/10 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60`}>
-      <nav className="flex h-14 items-center px-4 max-w-[1600px] mx-auto">
+    <header className={`h-12 md:h-20 sticky top-0 z-50 w-full border-b border-white/10 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60`}>
+      <nav className="flex h-10 md:h-14 items-center px-4 max-w-[1600px] mx-auto">
         <Link href="/" className="mr-4 flex items-center space-x-2">
           <Image
             // src="/logo.png"
@@ -50,7 +50,7 @@ export function Header() {
             height={32}
             className="rounded-lg"
           />
-          <span className="hidden text-lg font-bold sm:inline-block">
+          <span className="text-sm  md:text-lg font-bold sm:inline-block">
             BizMate HR Solutions
           </span>
         </Link>
@@ -73,7 +73,7 @@ export function Header() {
           <SheetTrigger asChild className="md:hidden">
             <Button
               variant="ghost"
-              className="ml-auto h-8 w-8 px-0 text-white hover:bg-white/10"
+              className="ml-auto h-8 w-8 px-0 text-black hover:bg-white/10"
             >
               <Menu className="h-4 w-4" />
               <span className="sr-only">Toggle menu</span>
@@ -81,14 +81,14 @@ export function Header() {
           </SheetTrigger>
           <SheetContent
             side="right"
-            className="w-[85vw] max-w-xs border-white/10 bg-black/95 backdrop-blur px-0 pt-0"
+            className="w-[85vw] max-w-xs border-white/ bg-white/90 backdrop-blur px-0 pt-0"
           >
             <div className="flex h-14 items-center border-b border-white/10 px-4">
               <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-              <Link href="/" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
+              <Link href="/" className="flex items-center space-x-1 text-sm" onClick={() => setIsOpen(false)}>
                 <Image
-                  src="/e-cell-logo.png"
-                  alt="E-Cell Logo"
+                  src="/globe.svg"
+                  alt="bizmate logo"
                   width={40}
                   height={40}
                   className="rounded-lg"
@@ -102,7 +102,7 @@ export function Header() {
                   key={item.name}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="border-b border-white/10 py-5 text-base font-medium text-white/70 transition-colors hover:text-white"
+                  className="border-b border-white/10 py-5 text-base font-medium transition-colors hover:text-white"
                 >
                   {item.name}
                 </Link>

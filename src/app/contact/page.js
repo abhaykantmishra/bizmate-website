@@ -65,7 +65,7 @@ export default function ContactPage() {
             />
             {/* Radial gradient for the container to give a faded look */}
             <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_50%,black)] dark:bg-black"></div>
-            <div className="w-full">
+            <div className="w-full mb-40">
                 <ContactForm />
                 <Faq />
             </div>
