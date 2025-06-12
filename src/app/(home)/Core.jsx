@@ -36,7 +36,7 @@ export function Core(){
         <div className="container mx-auto">
             <h2 className="text-3xl sticky font-bold text-sky-950 mb-12 text-center">Our Core Values</h2>
 
-            <div className="flex w-full">
+            <div className="hidden md:flex w-full">
                 <div className="w-[36%] h-[600px]">
                     <SmallCard icon={coreValues[0].icon} title={coreValues[0].title} description={coreValues[0].description} className={"h-1/2 mx-2 mb-3"} />
                     <SmallCard icon={coreValues[1].icon} title={coreValues[1].title} description={coreValues[1].description} className={"h-1/2 mx-2"} />
@@ -46,6 +46,14 @@ export function Core(){
                     <SmallCard icon={coreValues[3].icon} title={coreValues[3].title} description={coreValues[3].description} className={"h-1/2 mx-2 mb-3"} />
                     <SmallCard icon={coreValues[4].icon} title={coreValues[4].title} description={coreValues[4].description} className={"h-1/2 mx-2"} />
                 </div>
+            </div>
+
+            <div className="md:hidden w-full flex flex-col items-center justify-center">
+                <SmallCard icon={coreValues[0].icon} title={coreValues[0].title} description={coreValues[0].description} className={"w-[90%] mx-2 mb-3"} />
+                <SmallCard icon={coreValues[1].icon} title={coreValues[1].title} description={coreValues[1].description} className={"w-[90%] mx-2 mb-3"} />
+                <SmallCard icon={coreValues[2].icon} title={coreValues[2].title} description={coreValues[2].description} className={"w-[90%] mx-2 mb-3"} />
+                <SmallCard icon={coreValues[3].icon} title={coreValues[3].title} description={coreValues[3].description} className={"w-[90%] mx-2 mb-3"} />
+                <SmallCard icon={coreValues[4].icon} title={coreValues[4].title} description={coreValues[4].description} className={"w-[90%] mx-2 mb-3"} />
             </div>
             
         </div>

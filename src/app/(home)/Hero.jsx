@@ -51,19 +51,22 @@ export function Hero() {
       {/* Radial gradient for the container to give a faded look */}
       {/* <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_50%,black)] dark:bg-black"></div> */}
 
-      <div className="max-w-[1700px] mx-auto my-auto flex md:flex-row">
+      <div className="max-w-[1700px] mx-auto my-auto flex flex-col md:flex-row">
 
-        <div className="w-1/2 flex flex-col justify-center ml-20 z-20">
-          <h1 className="text-6xl font-bold font-mono text-blue-700  my-5">BizMate HR Solutions</h1>
-          <h3 className="text-2xl font-medium mt-5 ">Connecting Talent with opportunity </h3>
-          <h3 className="text-2xl font-medium ">Developing Robust HR Process</h3>
-          <h3 className="text-2xl font-medium mb-5 ">Aligning HR with Business </h3>
-          <p className="font-serif text-2xl max-w-[35rem]">
+        <div className="w-full md:w-1/2 flex flex-col justify-center md:ml-20 mx-1"
+          // style={{backgroundImage: `url(${image_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}
+        >
+          <h1 className="text-3xl md:text-6xl font-bold font-mono text-blue-700  my-5 z-20">BizMate HR Solutions</h1>
+          <h3 className="text-xl md:text-2xl font-medium mt-5 z-20">Connecting Talent with opportunity </h3>
+          <h3 className="text-xl md:text-2xl font-medium z-20">Developing Robust HR Process</h3>
+          <h3 className="text-xl md:text-2xl font-medium mb-5 z-20">Aligning HR with Business </h3>
+          <p className="font-serif text-2xl max-w-[35rem] z-20">
             At Bizmate HR Solutions, we believe in the power of people. We understand that the success of any organization hinges on its ability to attract, develop, and retain top talent. That&apos;s where we come in - your trusted partner in navigating the ever-evolving landscape of Human Resources.
           </p>
-          <div className="flex flex-row mt-20">
+          <div className="flex flex-col md:flex-row mt-20 z-20">
             <Link href="/contact">
             <HoverButton
+              className={"mb-5"}
               hoverColor="#000"
             > 
               <p>Accelerate with Bizmate</p>
@@ -83,7 +86,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="w-1/2 max-h-screen flex items-center">
+        <div className="w-full mx-1 md:mx-0 md:w-1/2 max-h-screen flex items-center">
           <img className="w-full" src={image_url} alt="" />
         </div>
       </div>

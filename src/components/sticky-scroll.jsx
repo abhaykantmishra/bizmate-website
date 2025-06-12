@@ -43,7 +43,7 @@ export default function StickyScroll({ content }) {
   return (
     <div className="relative" ref={containerRef}>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="space-y-24 py-8">
+        <div className="space-y-6 md:space-y-24 py-2 md:py-8 mx-4 md:mx-0">
           {content.map((item, index) => (
             <div
               key={index}
@@ -55,8 +55,8 @@ export default function StickyScroll({ content }) {
               }}
               className="min-h-[30vh]"
             >
-              <h3 className="text-4xl font-bold text-sky-900 my-10">{item.title}</h3>
-              <p className="text-sky-700 text-2xl">{item.content}</p>
+              <h3 className="text-xl md:text-4xl font-bold text-sky-900 my-10">{item.title}</h3>
+              <p className="text-sky-700 text-lg md:text-2xl">{item.content}</p>
             </div>
           ))}
         </div>

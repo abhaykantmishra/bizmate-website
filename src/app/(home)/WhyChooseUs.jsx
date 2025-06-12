@@ -29,27 +29,27 @@ export function WhyChooseUs() {
     return (
         <section className="my-20">
             <div className="container h-[95vh] md:min-h-[100vh] lg:min-h-[90vh] mx-auto flex flex-col justify-center">
-                <div className=" flex md:flex-row items-center">
+                <div className="mx-2 md:mx-0 flex flex-col md:flex-row items-center">
 
-                    <div className="w-[30%] flex flex-col justify-center z-20">
-                        <h2 className="text-6xl text-blue-500 tracking-wide"> Why Choose Bizmate </h2>
+                    <div className="md:w-[30%] flex flex-col justify-center z-20">
+                        <h2 className="text-3xl md:text-6xl text-blue-500 tracking-wide"> Why Choose Bizmate </h2>
                     </div>
                 
-                    <div className="w-[70%] max-h-screen flex flex-col items-center justify-center">
-                        <div className="flex flex-row items-center  my-5 text-xl font-semibold">
+                    <div className="md:w-[70%] max-h-screen flex flex-col items-center justify-center">
+                        <div className="flex flex-row items-center  my-5 text-xs md:text-xl md:font-semibold">
                             <img  width={100} height={100} src={image_url} />
                             <p className="z-20">
                             {content[0].description}
                             </p>
                         </div>
 
-                        <div className="flex flex-row items-center  my-5 text-xl font-semibold">
+                        <div className="flex flex-row items-center my-2 md:my-5 text-xs md:text-xl md:font-semibold">
                             <img  width={100} height={100} src={image_url} />
                             <p className="z-20">
                             {content[1].description}
                             </p>
                         </div>
-                        <div className="flex flex-row items-center  my-5 text-xl font-semibold">
+                        <div className="flex flex-row items-center my-2 md:my-5 text-xs md:text-xl md:font-semibold">
                             <img  width={100} height={100} src={image_url} />
                             <p className="z-20">
                             {content[2].description}
@@ -64,7 +64,7 @@ export function WhyChooseUs() {
                     </div>
 
                 </div>
-                <div className="bg-blue-500 p-3 rounded-sm z-20 text-2xl text-blue-700 text-center my-20 flex flex-row items-center">
+                <div className="mx-2 md:mx-0 bg-blue-500 p-3 rounded-sm z-20 md:text-2xltext-lg text-blue-700 text-center my-5 md:my-20 flex flex-row items-center">
                     {/* <CheckCircle className="text-green-600" /> */}
                     <img className="rounded-full" width={100} height={100} src={image_url} />
                     <p className="p-0 m-0 z-100 text-white">

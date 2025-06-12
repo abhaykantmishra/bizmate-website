@@ -61,7 +61,7 @@ export default function Home() {
         />
         {/* Blurred circle following the mouse */}
         <div 
-            className="absolute bg-blue-500 rounded-full blur-3xl opacity-50 w-50 h-50 transition-all duration-300 ease-out"
+            className="hidden md:block absolute bg-blue-500 rounded-full blur-3xl opacity-50 w-50 h-50 transition-all duration-300 ease-out"
             style={{
               left: `${position.x}px`,
               top: `${position.y}px`,

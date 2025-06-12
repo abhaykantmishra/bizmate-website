@@ -14,38 +14,38 @@ export function Experience(){
                     </div>
                     <div 
                         // style={{backgroundImage: `url(${image_url})`, backgroundSize: "cover", opacity: 0.5}} 
-                        className="w-1/2 z-20 flex flex-col items-center justify-center"
+                        className="w-full md:w-1/2 z-20 flex flex-col items-center justify-center my-5 md:my-0"
                     >
-                    <p className=" text-3xl z-20">
+                    <p className="text-lg md:text-3xl z-20 md:mx-0 mx-2">
                         At Bizmate, we pride ourselves on our extensive experience in the world of recruitment. With years of dedicated service, our team has honed its expertise in connecting top-tier talent with exceptional opportunities. Our success stories range across industries, from startups to established enterprises, reflecting our commitment to delivering tailored solutions and contributing to the growth of businesses and careers alike
                     </p>
                     </div>
                 </div>
 
                 {/* Count up section */}
-                <div id="count" className=" w-full flex flex-row z-50  bg-neutral-100 rounded-md mb-10">
-                    <div className="w-[30%] z-20 px-10 mx-0 flex flex-col items-center justify-center bg-neutral-50">
-                        <p className="font-bold text-5xl text-blue-600">Our Stats</p>
-                        <p className="font-bold text-5xl text-blue-600">of Success</p>
+                <div id="count" className="w-full grid grid-cols-2 md:flex md:flex-row z-20  bg-neutral-100 rounded-md mb-10">
+                    <div className="md:w-[30%] z-20 px-10 mx-3 md:mx-0 flex flex-col items-center justify-center bg-neutral-50">
+                        <p className="font-bold text-2xl md:text-5xl text-blue-600 text-start">Our Stats</p>
+                        <p className="hidden md:blockfont-bold text-2xl md:text-5xl text-blue-600">of Success</p>
                     </div>
                     {/* <Separator orientation="vertical" className="text-black z-20" /> */}
-                    <div className="w-[20%] z-20 mx-10 my-10">
-                        <div className="text-6xl font-bold text-purple-500">
+                    <div className="md:w-[20%] z-20 mx-4 md:mx-10 my-4 md:my-10">
+                        <div className="text-2xl md:text-6xl font-bold text-purple-500">
                             <CountUp start={0} end={90} duration={1000} decimals={0} easing="easeOut" />%
                         </div>
-                        <div className="text-black text-xl">No of placements</div>
+                        <div className="text-black text-sm md:text-xl">No of placements</div>
                     </div>
-                    <div className="w-[20%] z-20 mx-10 my-10">
-                        <div className="text-6xl font-bold text-purple-500">
+                    <div className="md:w-[20%] z-20 mx-4 md:mx-10 my-4 md:my-10">
+                        <div className="text-2xl md:text-6xl font-bold text-purple-500">
                             <CountUp start={0} end={95} duration={1000} decimals={0} easing="easeOut" />%
                         </div>
-                        <div className="text-black text-xl">Client satisfaction</div>
+                        <div className="text-black text-sm md:text-xl">Client satisfaction</div>
                     </div>
-                    <div className="w-[20%] z-20 mx-10 my-10">
-                        <div className="text-6xl font-bold text-purple-500">
+                    <div className="md:w-[20%] z-20 mx-4 md:mx-10 my-4 md:my-10">
+                        <div className="text-2xl md:text-6xl font-bold text-purple-500">
                             <CountUp start={0} end={87} duration={1000} decimals={0} easing="easeOut" />%
                         </div>
-                        <div className="text-black text-xl">Industry Specialization</div>
+                        <div className="text-black text-sm md:text-xl">Industry Specialization</div>
                     </div>
                 </div>
             </div>
