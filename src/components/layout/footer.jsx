@@ -11,41 +11,42 @@ const services = [
       title: "HR Consulting",
       description: "Expert HR consulting to optimize your human resources strategies and policies.",
       image: "/placeholder.svg?height=300&width=400",
-      link: "/services/consulting",
+      link: "/services/hr-consultancy",
     },
     {
-      title: "Payroll Management",
+      title: "HSE",
       description: "Streamline your payroll processes with our efficient management solutions.",
       image: "/placeholder.svg?height=300&width=400",
-      link: "/services/payroll",
+      link: "/services/hse",
     },
     {
-      title: "Employee Training",
+      title: "Staffing Management",
       description: "Comprehensive training programs to enhance employee skills and productivity.",
       image: "/placeholder.svg?height=300&width=400",
-      link: "/services/training",
+      link: "/services/staffing",
     },
     {
       title: "Performance Management",
       description: "Effective systems to monitor and improve employee performance.",
       image: "/placeholder.svg?height=300&width=400",
-      link: "/services/performance",
+      link: "/services/talent-management",
     },
     {
-      title: "Compliance Management",
+      title: "Customized Solutions",
       description: "Stay compliant with all HR regulations and requirements.",
       image: "/placeholder.svg?height=300&width=400",
-      link: "/services/compliance",
+      link: "/services/customized-solutions",
     },
 ]
 
-export default function Footer() {
+export function Footer() {
     return (
-        <footer className="bg-sky-900 text-white py-12">
-        <div className="container max-w-[1700px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="relative bg-sky-900">
+        <footer className=" w-full absolute bottom-0 ] h-full bg-sky-900 text-white py-12 z-50">
+        <div className="w-full  bg-sky-900 mx-auto z-50">
+          <div className="w-full max-w-[1700px] mx-auto bg-sky-900 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 z-50">
             
-            <div>
+            <div className="m-0">
               <h3 className="text-xl font-bold mb-4">BizMate HR Solutions</h3>
               <p className="text-sky-100">
                 Transforming HR operations for businesses worldwide with innovative solutions.
@@ -56,27 +57,22 @@ export default function Footer() {
               <h4 className="font-bold mb-4">Quick Links</h4>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/" className="text-sky-100 hover:text-white">
+                  <Link href="/" className="font-medium text-white transition-colors hover:text-blue-700">
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link href="/about" className="text-sky-100 hover:text-white">
+                  <Link href="/about" className="font-medium text-white transition-colors hover:text-blue-700">
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services" className="text-sky-100 hover:text-white">
-                    Services
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" className="text-sky-100 hover:text-white">
+                  <Link href="/contact" className="font-medium text-white transition-colors hover:text-blue-700">
                     Contact
                   </Link>
                 </li>
                 <li>
-                  <Link href="/careers" className="text-sky-100 hover:text-white">
+                  <Link href="/careers" className="font-medium text-white transition-colors hover:text-blue-700">
                     Careers
                   </Link>
                 </li>
@@ -141,5 +137,6 @@ export default function Footer() {
           </div>
         </div>
       </footer>
+      </div>
     )
 }

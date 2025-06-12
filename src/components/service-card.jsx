@@ -15,12 +15,12 @@ export function ServiceCard ({title, description, image, url}) {
             </CardHeader>
             <CardContent className="relative bg-neutral-100 z-20 hover:bg-neutral-200 h-[300px] md:h-[400px]">
                 <CardTitle className={"text-lg md:text-2xl font-bold text-center my-5 text-blue-600"}>{title}</CardTitle>
-                <CardDescription className={"max-h-[100px] md:max-h-[200px] 2xl:max-h-[250px] overflow-y-hidden text-start text-black text-xs md:text-base my-5"}>
+                <CardDescription className={"max-h-[100px] md:max-h-[180px] overflow-y-clip text-start text-black text-xs md:text-sm my-5"}>
                     {description}   
                 </CardDescription>
                 <CardFooter className={"mx-auto mt-10 absolute bottom-0 left-0 mb-5"}>
                     <Link href={`${url}`}>
-                    <HoverButton isPrimary={false}  className="hover:text-white">
+                    <HoverButton isPrimary={false}  className="hover:text-white text-xs md:text-base pl-2 pr-0 py-1 md:py-2">
                         Learn More
                     </HoverButton>
                     </Link>

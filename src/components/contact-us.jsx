@@ -7,14 +7,14 @@ import Link from "next/link"
 
 export function ContactForm() {
   return (
-    <section className="md:mt-40 mb-10 my-10">
+    <section className="md:mt-20 mb-10 my-10">
         <div className="max-w-[1400px] mx-auto flex flex-col justify-center">
             <div className="flex md:flex-row  flex-col bg-black shadow-2xl shadow-blue-700 p-3 rounded-none md:rounded-lg z-20 md:px-10 mx-2 md:mx-10">
 
                 <div className="md:w-1/2 w-full space-y-8 z-20 md:mx-10 text-white my-10 md:my-5">
                     <div>
-                    <h2 className="text-2xl md:text-4xl font-bold mb-2">Get in Touch</h2>
-                    <p className="md:text-lg text-neutral-400">Have questions? We&apos;d love to hear from you.</p>
+                    <h2 className="text-xl md:text-3xl font-bold mb-2">Get in Touch</h2>
+                    <p className="md:text-lg text-base text-neutral-400">Have questions? We&apos;d love to hear from you.</p>
                     </div>
                     <form className="space-y-6">
                     <div className="space-y-2">
@@ -54,7 +54,7 @@ export function ContactForm() {
 
                 <div className="md:w-1/2 my-10 w-full space-y-8 z-20 md:mx-10 text-white md:my-5">
                     <div>
-                    <h2 className="text-2xl md:text-4xl font-bold mb-2">Contact Information</h2>
+                    <h2 className="text-xl md:text-3xl font-bold mb-2">Contact Information</h2>
                     <p className="md:text-lg text-neutral-400">Reach out to us through any of these channels.</p>
                     </div>
                     

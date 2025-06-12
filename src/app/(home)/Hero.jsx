@@ -56,11 +56,11 @@ export function Hero() {
         <div className="w-full md:w-1/2 flex flex-col justify-center md:ml-20 mx-1"
           // style={{backgroundImage: `url(${image_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}
         >
-          <h1 className="text-3xl md:text-6xl font-bold font-mono text-blue-700  my-5 z-20">BizMate HR Solutions</h1>
-          <h3 className="text-xl md:text-2xl font-medium mt-5 z-20">Connecting Talent with opportunity </h3>
-          <h3 className="text-xl md:text-2xl font-medium z-20">Developing Robust HR Process</h3>
-          <h3 className="text-xl md:text-2xl font-medium mb-5 z-20">Aligning HR with Business </h3>
-          <p className="font-serif text-2xl max-w-[35rem] z-20">
+          <h1 className="text-3xl md:text-5xl font-bold font-mono text-blue-700  my-5 z-20">BizMate HR Solutions</h1>
+          <h3 className="text-base md:text-2xl font-medium mt-5 z-20">Connecting Talent with opportunity </h3>
+          <h3 className="text-base md:text-2xl font-medium z-20">Developing Robust HR Process</h3>
+          <h3 className="text-base md:text-2xl font-medium mb-5 z-20">Aligning HR with Business </h3>
+          <p className="font-serif text-lg md:text-2xl max-w-[35rem] z-20">
             At Bizmate HR Solutions, we believe in the power of people. We understand that the success of any organization hinges on its ability to attract, develop, and retain top talent. That&apos;s where we come in - your trusted partner in navigating the ever-evolving landscape of Human Resources.
           </p>
           <div className="flex flex-col md:flex-row mt-20 z-20">
