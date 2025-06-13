@@ -27,18 +27,21 @@ const content = [
 
 export function WhyChooseUs() {
     return (
-        <section className="md:my-32 md:mb-10 my-32">
-            <div className="container mx-auto flex flex-col justify-center">
+        <section className="md:my-32 md:mb-10 my-32 bg-sky-200 py-4 rounded-md">
+            <div className="max-w-[1700px] mx-auto flex flex-col justify-center">
                 <div className="mx-2 md:mx-0 flex flex-col md:flex-row items-center z-20">
                     
-                    <div className="relative h-full md:w-[40%] flex flex-col justify-center items-center z-20">
+                    
+                    <div className="relative md:w-[40%] min-h-[100%] flex flex-col justify-center items-center z-20">
                         {/* bg image  */}
                         <div
-                            className="hidden md:block absolute inset-0 bg-cover bg-center opacity-20"
+                            className="hidden md:block w-full h-full absolute inset-0 bg-cover bg-center opacity-25"
                             style={{ backgroundImage: `url(${image_url})` }}
                         ></div>
                         {/* text  */}
-                        <h2 className="relative font-semibold text-2xl my-10 md:my-0 md:text-6xl text-blue-800 tracking-wide z-50"> Why Choose Bizmate </h2>
+                        <div className="w-full h-full">
+                            <h2 className=" font-semibold text-2xl my-10 md:text-6xl text-blue-800 tracking-wide z-50"> Why Choose Bizmate </h2>
+                        </div>
                     </div>
                 
                     <div className="md:w-[60%] max-h-screen flex flex-col items-center justify-center">
