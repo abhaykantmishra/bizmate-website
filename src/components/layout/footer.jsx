@@ -1,42 +1,13 @@
 import Link from "next/link";
 
 const services = [
-    {
-      title: "Recruitment & Staffing",
-      description: "Find the right talent for your organization with our comprehensive recruitment solutions.",
-      image: "/placeholder.svg?height=300&width=400",
-      link: "/services/recruitment",
-    },
-    {
-      title: "HR Consulting",
-      description: "Expert HR consulting to optimize your human resources strategies and policies.",
-      image: "/placeholder.svg?height=300&width=400",
-      link: "/services/hr-consultancy",
-    },
-    {
-      title: "HSE",
-      description: "Streamline your payroll processes with our efficient management solutions.",
-      image: "/placeholder.svg?height=300&width=400",
-      link: "/services/hse",
-    },
-    {
-      title: "Staffing Management",
-      description: "Comprehensive training programs to enhance employee skills and productivity.",
-      image: "/placeholder.svg?height=300&width=400",
-      link: "/services/staffing",
-    },
-    {
-      title: "Performance Management",
-      description: "Effective systems to monitor and improve employee performance.",
-      image: "/placeholder.svg?height=300&width=400",
-      link: "/services/talent-management",
-    },
-    {
-      title: "Customized Solutions",
-      description: "Stay compliant with all HR regulations and requirements.",
-      image: "/placeholder.svg?height=300&width=400",
-      link: "/services/customized-solutions",
-    },
+  { name: 'Recruitment Solution & Services', href: '/services/recruitment' },
+  { name: 'Staffing Solutions & Services', href: '/services/staffing' },
+  { name: 'Talent Management Solutions & Services', href: '/services/talent-management' },
+  { name: 'HR Consultancy Services', href: '/services/hr-consultancy' },
+  { name: 'HSE Services', href: '/services/hse' },
+  { name: 'Customized Solutions', href: '/services/customized-solutions' },
+
 ]
 
 export function Footer() {
@@ -72,8 +43,8 @@ export function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/careers" className="font-medium text-white transition-colors hover:text-blue-700">
-                    Careers
+                  <Link href="/#" className="font-medium text-white transition-colors hover:text-blue-700">
+                    Blog
                   </Link>
                 </li>
               </ul>
@@ -84,8 +55,8 @@ export function Footer() {
               <ul className="space-y-2">
                 {services.slice(0, 5).map((service, index) => (
                   <li key={index}>
-                    <Link href={service.link} className="text-sky-100 hover:text-white">
-                      {service.title}
+                    <Link href={service.href} className="text-sky-100 hover:text-blue-400">
+                      {service.name}
                     </Link>
                   </li>
                 ))}

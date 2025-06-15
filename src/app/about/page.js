@@ -262,7 +262,7 @@ const HeroSection = ({ scrollYProgress }) => {
     <>
     <motion.section
       style={{ scale, rotate }}
-      className='sticky max-w-full md:max-w-7xl mx-auto md:my-20 font-semibold top-20 h-screen flex flex-col  text-black'
+      className='sticky max-w-full md:max-w-7xl mx-auto md:my-10 font-semibold top-20 h-screen flex flex-col  text-black'
     >
 
       <div className="mx-4 md:min-h-[60vh] flex flex-col md:flex-row items-center justify-center z-0 bg-blue-100 rounded-md overflow-y-hidden">
