@@ -51,6 +51,7 @@ export function Header() {
   const [isOpen, setIsOpen] = React.useState(false)
   const [isHovered, setIsHovered] = React.useState(false)
   const [dropdownOpen, setDropdownOpen] = React.useState(false)
+  const [mobileDropdownOpen, setMobileDropdownOpen] = React.useState(false)
 
   const router = useRouter();
 
@@ -63,6 +64,11 @@ export function Header() {
     setIsHovered(false);
     setDropdownOpen(false);
   };
+
+  const toggleDropdownInMobile = () => {
+    setDropdownOpen(!mobileDropdownOpen);
+    // setIsHovered(!isHovered);
+  }
 
   return (
     <header className={`h-12 md:h-20 sticky top-0 z-50 w-full border-b border-white/10 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60`}>
@@ -170,16 +176,62 @@ export function Header() {
               </Link>
             </div>
             <nav className="flex flex-col px-4">
-              {navigation.map((item) => (
+              {navigation.map((item) => {
+            if(item.name === 'Services') {
+              return (
+                <div key={item.name} >
+                <DropdownMenu onClick={toggleDropdownInMobile} open={mobileDropdownOpen} onOpenChange={setMobileDropdownOpen}>
+                  <div
+                    // onMouseEnter={handleMouseEnter}
+                    // onMouseLeave={handleMouseLeave}
+                    className="relative"
+                  >
+                    <DropdownMenuTrigger asChild>
+                      <span className="font-medium text-black transition-colors hover:text-blue-700 cursor-pointer flex items-center">
+                        {item.name}
+                        <span className="ml-2 transition-all duration-1000">
+                          {mobileDropdownOpen ? (
+                            <ChevronUp className="h-4 w-4" />
+                          ) : (
+                            <ChevronDown className="h-4 w-4" />
+                          )}
+                        </span>
+                      </span>
+                    </DropdownMenuTrigger>
+                    
+                    <DropdownMenuContent 
+                      side="bottom" 
+                      align="start"
+                      className="bg-blue-200 rounded-none transition-all duration-500"
+                    >
+                      {
+                        services.map((service, idx) => (
+                           <DropdownMenuItem onClick={() => {setIsOpen(false); setMobileDropdownOpen(false)}} key={idx} className={"rounded-none px-2 hover:bg-white"}>
+                            <Link  key={idx} href={service.href} className="font-medium text-xs text-black transition-colors hover:text-blue-700">
+                              {service.name}
+                            </Link>
+                          </DropdownMenuItem>
+                        ))
+                      }
+                    </DropdownMenuContent>
+                  </div>
+                </DropdownMenu>
+                </div>
+
+              )
+            }
+            else{
+              return (
                 <Link
                   key={item.name}
                   href={item.href}
-                  onClick={() => setIsOpen(false)}
-                  className="border-b border-white/10 py-5 text-base font-medium transition-colors hover:text-white"
+                  className="font-medium text-black transition-colors hover:text-blue-700"
                 >
                   {item.name}
                 </Link>
-              ))}
+              )
+            }
+          })}
             </nav>
           </SheetContent>
         </Sheet>
