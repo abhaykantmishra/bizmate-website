@@ -42,7 +42,7 @@ function FAQItem({ question, answer, index }) {
         ease: "easeOut",
       }}
       className={cn(
-        "group rounded-lg border-[1px] border-neutral-200 dark:border-gray-800/50 rounded-none",
+        "group border-[1px] border-neutral-200 dark:border-gray-800/50 rounded-none",
         "transition-all duration-200 ease-in-out  mx-auto",
         isOpen
           ? "bg-linear-to-br from-white via-gray-50/50 to-white dark:from-white/5 dark:via-white/2 dark:to-white/5"
