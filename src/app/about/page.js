@@ -19,37 +19,29 @@ const content = [
 
 const team = [
   {
-    name: "Ravi Kumar",
-    title: "CEO",
+    name: "Mr. Atul Trikha",
+    title: "Founder",
     image: image_url,
     email: "example@email.com",
     linkedin:"https://linkedin.com",
     bio:"With a background in mechanical engineering and an illustrious career spanning over 35 years mostly with multinational giant, JCB, Mr. Atul Trikha brings a unique blend of technical expertise and visionary leadership. In 2022, driven by an entrepreneurial spirit, he embarked on a new journey and set up a new venture from scratch which has now commendable turnover of 15 crores, a testament to his strategic acumen and unwavering commitment to excellence. Mr. Tirkha’s expertise and relentless pursuit of innovation positions Bizmate HR Solutions at the forefront of industry evolution"
   },
   {
-    name: "Ravi Kumar",
-    title: "CEO",
+    name: "Dr.P Vigneswara llavarasan",
+    title: "Advisor & Consultant",
     image: image_url,
     email: "example@email.com",
     linkedin:"https://linkedin.com",
-    bio:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae."
+    bio:"is Abdulaziz Alsagar Chair Professor at the Dept. of Management Studies, IIT, Delhi. He researches and teaches about the interaction of information and communication technologies (ICTs), society & and business. Dr. Ilavarasan is one of the top 2% cited scholars in the world in 2022 as per the Elsevier & Stanford study. He is a recipient of the Outstanding Young Faculty Fellowship Award at IIT Delhi. and Prof. M.N. Srinivas"
   },
   {
-    name: "Ravi Kumar",
-    title: "CEO",
+    name: "Prashant Prem",
+    title: "Managing Partner",
     image: image_url,
     email: "example@email.com",
     linkedin:"https://linkedin.com",
-    bio:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae."
+    bio:"A distinguished C-Level HR professional and Strategic Business Leader, boasting over 35 years of comprehensive experience in Corporate HR. His passion lies in crafting and implementing transformative HR strategies, a proficiency honed through decades of success in strategic leadership roles. With the hands- on experience of leading the HR function he offers strategic insights and solutions for optimal human capital management in HR consulting"
   },
-  {
-    name: "Ravi Kumar",
-    title: "CEO",
-    image: image_url,
-    email: "example@email.com",
-    linkedin:"https://linkedin.com",
-    bio:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae."
-  }
 ]
 
 const testimonials =[
@@ -387,7 +379,7 @@ const OurCoreTeam = () => {
   return (
     <section className="z-20">
       <h1 className="text-3xl font-bold md:text-5xl text-center z-50">Our Core Team</h1>
-      <div className="grid grid-col-1  md:grid-cols-4 max-w-6xl mx-auto my-4 md:my-20">
+      <div className="grid grid-col-1  md:grid-cols-3 max-w-6xl mx-auto my-4 md:my-20">
         {team.map((member, index) => (
           <BioCard 
             key={index} 

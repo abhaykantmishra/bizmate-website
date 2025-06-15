@@ -6,7 +6,7 @@ export function Experience(){
     return (
         <section className="my-20">
             <div className="container mx-auto flex flex-col justify-center z-20">
-                <h2 className="text-4xl font-bold text-center z-20">Experience</h2>
+                <h2 className="text-2xl md:text-5xl font-bold text-center z-20">Experience</h2>
 
                 <div className="w-full flex md:flex-row flex-col">
                     <div className="hidden md:block w-1/2">

@@ -34,7 +34,7 @@ export function Core(){
     return (
         <section className="my-20">
         <div className="container mx-auto">
-            <h2 className="text-3xl sticky font-bold text-sky-950 mb-12 text-center">Our Core Values</h2>
+            <h2 className="text-2xl md:text-5xl sticky font-bold text-sky-950 mb-12 text-center">Our Core Values</h2>
 
             <div className="hidden md:flex w-full">
                 <div className="w-[36%] h-[600px]">

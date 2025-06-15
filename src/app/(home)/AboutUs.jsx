@@ -32,9 +32,9 @@ export function AboutUs() {
 
 
 
-      <section id="idea-vision-mission mb-96 mx-5 md:mx-0 ">
+      <section id="idea-vision-mission mb-96 mx-5 md:mx-0">
 
-        <h1 className="sticky top-14 md:top-20 z-0 text-center text-xl md:text-5xl ">About Us</h1>
+        <h1 className="sticky top-14 md:top-20 z-0 text-center text-xl md:text-5xl font-bold mt-40">About Us</h1>
 
         <div className="sticky top-22 md:top-44 max-w-[1600px] md:mx-auto mt-32">
           <AboutLeftCard image={image_url} title={"Our Idea"} description={content[0]} />
