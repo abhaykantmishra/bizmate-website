@@ -211,6 +211,7 @@ export default function AboutPage() {
     return (
          <BackgroundProvider>
 
+          <div className="md:max-w-7xl w-full">
             <main ref={container} className='relative w-full min-h-screen my-auto'>
               {/* <div className="relative h-[200vh]"> */}
               <HeroSection id="about-us-hero" scrollYProgress={scrollYProgress} />
@@ -242,9 +243,9 @@ export default function AboutPage() {
             </section>
 
             {/* Testimonials  */}
-            <section className="relative max-w-[24rem] md:max-w-6xl mx-auto w-full z-20" id="testimonials" >
+            <section className="relative max-w-[24rem] md:max-w-6xl mx-auto w-full z-20 md:my-32" id="testimonials" >
               <div className="max-w-2xl md:max-w-7xl mx-auto z-20 mb-40">
-                <h1 className="z-20 text-center md:text-5xl font-bold my-4">Testimonials</h1>
+                <h1 className="z-20 text-center md:text-5xl font-bold md:my-10">Testimonials</h1>
               <InfiniteMovingCards
                     items={testimonials}
                     direction="right"
@@ -257,7 +258,7 @@ export default function AboutPage() {
             {/* <section>
 
             </section> */}
-            
+          </div>
          </BackgroundProvider>
     )
 }
@@ -269,19 +270,22 @@ const HeroSection = ({ scrollYProgress }) => {
     <>
     <motion.section
       style={{ scale, rotate }}
-      className='sticky max-w-full md:max-w-[1600px] mx-auto md:my-20 font-semibold top-20 h-screen flex flex-col  text-black'
+      className='sticky max-w-full md:max-w-7xl mx-auto md:my-20 font-semibold top-20 h-screen flex flex-col  text-black'
     >
 
-      <div className="mx-4 flex flex-col md:flex-row items-center justify-center z-0 bg-blue-100 rounded-md overflow-y-hidden">
-        <div className="md:w-1/2 w-full">
-          <img  className="object-cover w-full" src={image_url} />
+      <div className="mx-4 md:min-h-[60vh] flex flex-col md:flex-row items-center justify-center z-0 bg-blue-100 rounded-md overflow-y-hidden">
+        <div className="md:w-[40%] w-[90%] mx-auto my-2">
+          <figure className="overflow-hidden mx-auto my-auto">
+          <img className="object-cover" src={image_url} alt={"about"} />
+          </figure>
         </div>
 
-        <div className="md:w-1/2 ">  
-          <h1 className="md:text-5xl text-3xl text-blue-500 mt-2 md:my-4 mx-2 md:font-bold font-semibold text-center md:text-left">
-            About
+        <div className="md:w-[60%] w-full">  
+          <h1 className="md:text-5xl text-2xl text-blue-500 mt-2 md:my-4 mx-2 md:font-bold font-semibold text-center md:text-left">
+            Building Careers.
+            Building Organisations.
           </h1>
-          <p className="text-black py-4 px-2 text-thin tracking-tight text-lg md:text-2xl">
+          <p className="text-black py-4 px-2 text-thin tracking-tight text-xs md:text-base">
             We are an HR Consultancy firm led by Mr. Atul Trikha having more than 30 years of experience of Industry and was inleadership role in a multinational company before donning thecap of <span className="text-blue-600 text-bold">“Entrepreneurship”</span>. Our advisors & consultants includemost experienced Industry veterans from various fields such as <span className="text-blue-600 text-bold">HR</span>, <span className="text-blue-600 text-bold">Research & Development</span>, <span className="text-blue-600 text-bold">Quality</span>, <span className="text-blue-600 text-bold">Marketing</span> etc.
           </p>
         </div>
@@ -300,10 +304,10 @@ const Section2 = ({ scrollYProgress }) => {
     <BackgroundProvider>
     <motion.section
       style={{ scale, rotate }}
-      className="relative h-screen w-screen top-10 pt-0 md:pt-40"
+      className="relative h-screen w-screen top-10 pt-0 md:pt-40  md:mb-40 mb-10"
     >
       <div className="relative mx-3 md:mx-0">
-        <div className="sticky max-h-fit top-0 max-w-[1600px] mx-auto">
+        <div className="sticky top-0 max-w-[1600px] mx-auto text-xs">
         <WhyChooseUs />
         {/* <AboutLeftCard image={image_url} title={"Our journey"} description={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae."} /> */}
         </div>
@@ -314,7 +318,7 @@ const Section2 = ({ scrollYProgress }) => {
   );
 };
  
-const AboutLeftCard = ({image, title, description}) => {
+export const AboutLeftCard = ({image, title, description}) => {
   return (
     <section className="md:my-32 md:mb-10 my-32 bg-sky-200 py-4 rounded-md mx-4 md:mx-0">
       <div className="max-w-[1600px] mx-auto flex flex-col justify-center">
@@ -332,8 +336,8 @@ const AboutLeftCard = ({image, title, description}) => {
             </div>
               {/* content  */}
             <div className="md:w-[60%] max-h-screen flex flex-col items-center justify-center">
-              <h2 className=" font-semibold text-2xl my-10 md:text-6xl text-blue-800 tracking-wide z-50"> {title} </h2>
-              <p className="text-black py-4 px-2 text-thin tracking-tight text-lg md:text-2xl">
+              <h2 className=" font-semibold text-2xl my-10 md:text-5xl text-blue-800 tracking-wide z-50"> {title} </h2>
+              <p className="text-black py-4 px-2 text-thin tracking-tight text-xs md:text-base">
                 {description}
               </p>
             </div>
@@ -345,7 +349,7 @@ const AboutLeftCard = ({image, title, description}) => {
   )
 }   
 
-const AboutRightCard = ({image, title, description}) => {
+export  const AboutRightCard = ({image, title, description}) => {
   return (
     <section className="md:my-32 md:mb-10 my-32 bg-sky-200 py-4 rounded-md mx-4 md:mx-0">
       <div className="max-w-[1600px] mx-auto flex flex-col justify-center">
@@ -355,8 +359,8 @@ const AboutRightCard = ({image, title, description}) => {
             
               {/* content  */}
             <div className="md:w-[60%] max-h-screen flex flex-col items-center justify-center">
-              <h2 className=" font-semibold text-2xl my-10 md:text-6xl text-blue-800 tracking-wide z-50"> {title} </h2>
-              <p className="text-black py-4 px-2 text-thin tracking-tight text-lg md:text-2xl">
+              <h2 className=" font-semibold text-2xl my-10 md:text-5xl text-blue-800 tracking-wide z-50"> {title} </h2>
+              <p className="text-black py-4 px-2 text-thin tracking-tight text-xs md:text-base">
                 {description}
               </p>
             </div>

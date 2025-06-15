@@ -1,5 +1,7 @@
 import StickyScroll from "@/components/sticky-scroll"
 import { image_url } from "@/constant/image"
+import { AboutLeftCard } from "../about/page"
+import { AboutRightCard } from "../about/page"
 
 const aboutContent = [
     {
@@ -19,78 +21,31 @@ const aboutContent = [
     },
 ]
 
+const content = [
+  "Out of Sea of Sameness, Bizmate by virtue of decades of working experience in varied Industries & functions of its partners & consultants, lifts the Employees value proposition for organizational growth",
+  "To be a respected Consultancy firm recognised by Our client as most trusted partner for delivering excellence by providing most suitable solutions for their business need.",
+  "To be a solution provider to our client for their business related to its critical yet most complicated resource i.e Human Resource in its entire gamut and sphere be it related to policy, system or process under one umbrella."
+]
+
 export function AboutUs() {
     return (
-      <>
-      {/* Mobile  */}
-      <section className="md:hidden block my-20">
-        <div className="container relative mx-auto">
-          <h2 className="text-3xl sticky bottom-0 font-bold text-sky-950 mb-12 text-center">About Us</h2>
-          <StickyScroll content={aboutContent} />
+
+
+
+      <section id="idea-vision-mission mb-96 mx-5 md:mx-0 ">
+
+        <h1 className="sticky top-14 md:top-20 z-0 text-center text-xl md:text-5xl ">About Us</h1>
+
+        <div className="sticky top-22 md:top-44 max-w-[1600px] md:mx-auto mt-32">
+          <AboutLeftCard image={image_url} title={"Our Idea"} description={content[0]} />
         </div>
+        <div className="sticky top-22 md:top-44 max-w-[1600px] md:mx-auto">
+          <AboutRightCard image={image_url} title={"Our Vision"} description={content[1]} />
+        </div>
+        <div className="sticky top-22 md:top-44 max-w-[1600px] md:mx-auto mb-32">
+          <AboutLeftCard image={image_url} title={"Our Mission"} description={content[2]} />
+        </div>           
       </section>
 
-      {/* desktop  */}
-      <section className='hidden md:block max-w-[1700px] relative my-20'>
-            {/* <h1 className="md:text-3xl text-xl font-bold sticky top-40 h-[50%] text-center place-content-center">About Us</h1> */}
-          <div className='relative grid grid-cols-2 px-8'>
-            <div className='grid gap-2'>
-              <figure className='sticky top-0 h-screen grid place-content-center'>
-                <h1 className="mb-10 text-blue-500 font-bold md:text-4xl z-20">About Us</h1>
-                <img
-                  src={image_url}
-                  alt="about images"
-                  className='z-0 transition-all duration-300 w-96 h-96 align-bottom object-cover rounded-none'
-                />
-              </figure>
-              <figure className='sticky top-0 h-screen grid place-content-center'>
-                <img
-                  src={image_url}
-                  alt="about images"
-                  className='transition-all mt-20 duration-300  w-96 h-96 align-bottom object-cover rounded-none'
-                />
-              </figure>
-              <figure className='sticky top-0 h-screen grid place-content-center'>
-                <img
-                  src={image_url}
-                  alt="about images"
-                  className='transition-all mt-20 duration-300 w-96 h-96 align-bottom object-cover rounded-none'
-                />
-              </figure>
-            </div>
-
-            {/* text content  */}
-            <div>
-
-              <div className='top-0 h-screen grid place-content-center'>    
-                <h1 className="text-xl font-bold underline text-blue-500 underline-blue-500 md:text-2xl text-start my-4 hover:card-hover-line z-20">
-                  {aboutContent[0]?.title}
-                </h1>
-                <h1 className='md:text-xl text-base font-medium text-start tracking-tight leading-[120%]'>
-                  {aboutContent[0]?.content}
-                </h1>
-              </div>
-              <div className='top-0 h-screen grid place-content-center'>    
-                <h1 className="text-xl font-bold underline text-blue-500 underline-blue-500 md:text-2xl text-start my-4 hover:card-hover-line z-20">
-                  {aboutContent[1]?.title}
-                </h1>
-                <h1 className='md:text-xl text-base font-medium text-start tracking-tight leading-[120%]'>
-                  {aboutContent[1]?.content}
-                </h1>
-              </div>
-              <div className='top-0 h-screen grid place-content-center'>    
-                <h1 className="text-xl font-bold underline text-blue-500 underline-blue-500 md:text-2xl text-start my-4 hover:card-hover-line z-20">
-                  {aboutContent[2]?.title}
-                </h1>
-                <h1 className='md:text-xl text-base font-medium text-start tracking-tight leading-[120%]'>
-                  {aboutContent[2]?.content}
-                </h1>
-              </div>
-      
-            </div>
-          </div>
-      </section>
-
-      </>
     )
 }

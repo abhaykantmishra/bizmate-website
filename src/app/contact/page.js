@@ -5,6 +5,29 @@ import { cn } from "@/lib/utils";
 import { ContactForm } from "@/components/contact-us";
 import Faq from "@/components/faq";
 
+const faqs = [
+    {
+      question: "What makes your platform unique?",
+      answer:
+        "Our platform stands out through its intuitive design, powerful automation capabilities, and seamless integration options. We've focused on creating a user experience that combines simplicity with advanced features.",
+    },
+    {
+      question: "How does the pricing structure work?",
+      answer:
+        "We offer flexible, transparent pricing tiers designed to scale with your needs. Each tier includes a core set of features, with additional capabilities as you move up. All plans start with a 14-day free trial.",
+    },
+    {
+      question: "What kind of support do you offer?",
+      answer:
+        "We provide comprehensive support through multiple channels. This includes 24/7 live chat, detailed documentation, video tutorials, and dedicated account managers for enterprise clients.",
+    },
+    {
+      question: "How can I get started?",
+      answer:
+        "You can get started by signing up for a free trial. Once you've signed up, you'll have access to our platform's full range of features. You can also contact our support team for assistance.",
+    },
+]
+
 export default function ContactPage() {
 
     const [position, setPosition] = useState({ x: 0, y: 0 })
@@ -67,7 +90,11 @@ export default function ContactPage() {
             <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_50%,black)] dark:bg-black"></div>
             <div className="w-full mb-40">
                 <ContactForm />
-                <Faq />
+                <div className="max-w-6xl mx-auto">
+                  <div className="mx-6">
+                    <Faq faqs={faqs} title={"Platform"} />
+                  </div>
+                </div>
             </div>
         </div>
     </main>

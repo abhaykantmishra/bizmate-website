@@ -4,7 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google"
 import * as React from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Menu, X } from 'lucide-react'
+import { ChevronDown, ChevronUp, Menu, X } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import {
   Sheet,
@@ -12,6 +12,9 @@ import {
   SheetTrigger,
   SheetTitle,
 } from "@/components/ui/sheet"
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "../ui/dropdown-menu"
+import { useRouter } from "next/navigation"
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,12 +34,35 @@ const navigation = [
   // { name: 'EDITORIAL CORNER', href: '/editorial' },
 //   { name: 'INITIATIVES', href: '/initiatives' },
   { name: 'Contact', href: '/contact' },
-  { name: 'Blog', href: '/blog' },
+  { name: 'Blog', href: '/#' },
+]
+
+const services = [
+  { name: 'Recruitment Solution & Services', href: '/services/recruitment' },
+  { name: 'Staffing Solutions & Services', href: '/services/staffing' },
+  { name: 'Talent Management Solutions & Services', href: '/services/talent-management' },
+  { name: 'HR Consultancy Services', href: '/services/hr-consultancy' },
+  { name: 'HSE Services', href: '/services/hse' },
+  { name: 'Customized Solutions', href: '/services/customized-solutions' },
 
 ]
 
 export function Header() {
   const [isOpen, setIsOpen] = React.useState(false)
+  const [isHovered, setIsHovered] = React.useState(false)
+  const [dropdownOpen, setDropdownOpen] = React.useState(false)
+
+  const router = useRouter();
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+    setDropdownOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    setDropdownOpen(false);
+  };
 
   return (
     <header className={`h-12 md:h-20 sticky top-0 z-50 w-full border-b border-white/10 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60`}>
@@ -56,16 +82,63 @@ export function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex md:flex-1 md:justify-end md:gap-5">
-          {navigation.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className="font-medium text-black transition-colors hover:text-blue-700"
-            >
-              {item.name}
-            </Link>
-          ))}
+        <div className="hidden md:flex md:flex-1 md:justify-end md:gap-5 w-full">
+          {navigation.map((item) => {
+            if(item.name === 'Services') {
+              return (
+                <div key={item.name} >
+                <DropdownMenu  open={dropdownOpen} onOpenChange={setDropdownOpen}>
+                  <div
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                    className="relative"
+                  >
+                    <DropdownMenuTrigger asChild>
+                      <span className="font-medium text-black transition-colors hover:text-blue-700 cursor-pointer flex items-center">
+                        {item.name}
+                        <span className="ml-2 transition-all duration-1000">
+                          {isHovered ? (
+                            <ChevronUp className="h-4 w-4" />
+                          ) : (
+                            <ChevronDown className="h-4 w-4" />
+                          )}
+                        </span>
+                      </span>
+                    </DropdownMenuTrigger>
+                    
+                    <DropdownMenuContent 
+                      side="bottom" 
+                      align="start"
+                      className="w-full bg-blue-200 rounded-none transition-all duration-500"
+                    >
+                      {
+                        services.map((service, idx) => (
+                           <DropdownMenuItem key={idx} className={"rounded-none px-2 hover:bg-white"}>
+                            <Link href={service.href} className="font-medium text-black transition-colors hover:text-blue-700">
+                              {service.name}
+                            </Link>
+                          </DropdownMenuItem>
+                        ))
+                      }
+                    </DropdownMenuContent>
+                  </div>
+                </DropdownMenu>
+                </div>
+
+              )
+            }
+            else{
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="font-medium text-black transition-colors hover:text-blue-700"
+                >
+                  {item.name}
+                </Link>
+              )
+            }
+          })}
         </div>
 
         {/* Mobile Navigation */}

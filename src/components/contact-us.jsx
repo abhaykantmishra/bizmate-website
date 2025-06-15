@@ -8,7 +8,7 @@ import Link from "next/link"
 export function ContactForm() {
   return (
     <section className="md:mt-20 mb-10 my-10">
-        <div className="max-w-[1400px] mx-auto flex flex-col justify-center">
+        <div className="max-w-6xl mx-auto flex flex-col justify-center">
             <div className="flex md:flex-row  flex-col bg-black shadow-2xl shadow-blue-700 p-3 rounded-none md:rounded-lg z-20 md:px-10 mx-2 md:mx-10">
 
                 <div className="md:w-1/2 w-full space-y-8 z-20 md:mx-10 text-white my-10 md:my-5">

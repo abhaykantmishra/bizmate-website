@@ -9,8 +9,8 @@ export function SmallCard({icon, title, description, className}) {
                 <div className="flex flex-col items-center text-center gap-4">
                   {/* <Presentation className="w-8 h-8 text-purple-400" /> */}
                   {icon}
-                  <h3 className="text-xl font-bold">{title}</h3>
-                  <p className="text-accent text-md font-medium">{description}</p>
+                  <h3 className="md:text-xl text-base font-bold">{title}</h3>
+                  <p className="text-accent font-medium">{description}</p>
                 </div>
               </CardContent>
         </Card>

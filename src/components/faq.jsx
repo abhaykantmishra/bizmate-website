@@ -27,7 +27,7 @@ const faqs = [
       answer:
         "You can get started by signing up for a free trial. Once you've signed up, you'll have access to our platform's full range of features. You can also contact our support team for assistance.",
     },
-  ]
+]
 
 function FAQItem({ question, answer, index }) {
   const [isOpen, setIsOpen] = useState(false)
@@ -136,12 +136,12 @@ function FAQItem({ question, answer, index }) {
   )
 }
 
-function Faq() {
+function Faq( {title, faqs} ) {
   
   return (
-    <section className="md:mb-40 mb-10">
-        <div className="max-w-[1400px] mx-auto flex flex-col justify-center">
-            <div className="flex md:flex-row  flex-col bg-black shadow-2xl shadow-blue-700 p-3 rounded-none md:rounded-lg z-20 md:px-10 mx-2 md:mx-10">
+    <section className="md:my-40 my-10">
+        <div className="max-w-full mx-auto flex flex-col justify-center">
+            <div className="flex md:flex-row  flex-col bg-black shadow-2xl shadow-blue-700 p-3 rounded-none md:rounded-lg z-20 md:px-10 mx-2">
                 <div className=" px-4 mx-auto py-10">
                     <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -152,11 +152,11 @@ function Faq() {
                     <h2 className="text-2xl md:text-4xl font-semibold mb-3 bg-linear-to-r from-gray-900 via-gray-800 to-gray-900 dark:from-white dark:via-gray-100 dark:to-white bg-clip-text text-white">
                         Frequently Asked Questions
                     </h2>
-                    <p className="text-sm md:text-base text-blue-500">Everything you need to know about our platform</p>
+                    <p className="text-sm md:text-base text-blue-500">Everything you need to know about {title}</p>
                     </motion.div>
 
                     <div className="max-w-2xl mx-auto space-y-2">
-                    {faqs.map((faq, index) => (
+                    {faqs?.map((faq, index) => (
                         <FAQItem key={index} {...faq} index={index} />
                     ))}
                     </div>
