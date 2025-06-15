@@ -206,7 +206,7 @@ export function Header() {
                     >
                       {
                         services.map((service, idx) => (
-                           <DropdownMenuItem onClick={() => {setIsOpen(false); setMobileDropdownOpen(false)}} key={idx} className={"rounded-none px-2 hover:bg-white"}>
+                           <DropdownMenuItem onClick={() => {setMobileDropdownOpen(false)}} key={idx} className={"rounded-none px-2 hover:bg-white"}>
                             <Link  key={idx} href={service.href} className="font-medium text-xs text-black transition-colors hover:text-blue-700">
                               {service.name}
                             </Link>
