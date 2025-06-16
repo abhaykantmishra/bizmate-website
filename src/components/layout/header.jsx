@@ -34,7 +34,7 @@ const navigation = [
   // { name: 'EDITORIAL CORNER', href: '/editorial' },
 //   { name: 'INITIATIVES', href: '/initiatives' },
   { name: 'Contact', href: '/contact' },
-  { name: 'Blog', href: '/#' },
+  // { name: 'Blog', href: '/#' },
 ]
 
 const services = [
