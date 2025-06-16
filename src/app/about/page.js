@@ -3,13 +3,14 @@
 import { Card } from "@/components/ui/card";
 import { image_url } from "@/constant/image";
 import { BackgroundProvider } from "@/providers/background-provider"
-import { useScroll, useTransform, motion } from 'motion/react';
+import { useScroll, useTransform, motion, useInView } from 'motion/react';
 import { useRef } from 'react';
 import { WhyChooseUs } from "../(home)/WhyChooseUs";
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { useState } from "react";
 import { X, Mail, Linkedin } from "lucide-react";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
+
 
 const content = [
   "Out of Sea of Sameness, Bizmate by virtue of decades of working experience in varied Industries & functions of its partners & consultants, lifts the Employees value proposition for organizational growth",
@@ -100,89 +101,133 @@ const testimonials =[
   },
 ]
 
+const FadeInOnScroll = ({ children, delay = 0, direction = "up" }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  
+  const directionVariants = {
+    up: { y: 50, opacity: 0 },
+    down: { y: -50, opacity: 0 },
+    left: { x: 50, opacity: 0 },
+    right: { x: -50, opacity: 0 }
+  };
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={directionVariants[direction]}
+      animate={isInView ? { x: 0, y: 0, opacity: 1 } : directionVariants[direction]}
+      transition={{ duration: 0.6, delay, ease: "easeOut" }}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+
 const BioCard = ({ member, bioContent }) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="flex flex-col items-center max-w-sm mx-auto md:my-10 my-3">
-      {/* Profile Image Container with Hover Effect */}
-      <Dialog open={open} onOpenChange={setOpen}>
-        <DialogTrigger asChild>
-          <div className="relative w-48 h-48 rounded-full overflow-hidden group cursor-pointer mb-4">
-            {/* Profile Image */}
-            <img
-              src={member.image}
-              alt={member.name}
-              className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-30"
-            />
-            
-            {/* Overlay with READ BIO text */}
-            <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-80 transition-opacity duration-300">
-              <span className="text-white text-lg font-semibold tracking-wider underline">
-                READ BIO
-              </span>
-            </div>
-          </div>
-        </DialogTrigger>
-        
-        <DialogContent className="md:min-w-6xl w-full mx-auto md:mx-4 p-0 overflow-hidden">
-          {/* Custom Close Button */}
-          <button
-            onClick={() => setOpen(false)}
-            className="absolute right-4 top-4 z-10 p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
-          >
-            <X className="w-5 h-5 text-gray-600" />
-          </button>
+    <FadeInOnScroll delay={0.2}>
+      <motion.div 
+        className="flex flex-col items-center max-w-sm mx-auto md:my-10 my-3"
+        whileHover={{ y: -5 }}
+        transition={{ duration: 0.3 }}
+      >
+        <Dialog open={open} onOpenChange={setOpen}>
+          <DialogTrigger asChild>
+            <motion.div 
+              className="relative w-48 h-48 rounded-full overflow-hidden group cursor-pointer mb-4"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            >
+              <img
+                src={member.image}
+                alt={member.name}
+                className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-30"
+              />
+              
+              <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-80 transition-opacity duration-300">
+                <span className="text-white text-lg font-semibold tracking-wider underline">
+                  READ BIO
+                </span>
+              </div>
+            </motion.div>
+          </DialogTrigger>
           
-          <div className="flex flex-col md:flex-row">
-            {/* Left Side - Profile Image and Basic Info */}
-            <div className="flex-shrink-0 md:p-8 bg-gray-50 flex flex-col items-center w-full md:w-[20%]">
-              <div className="w-32 md:w-48 h-32 md:h-48 rounded-full overflow-hidden mb-1 md:mb-6">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              
-              <h2 className="text-base md:text-2xl font-bold text-gray-900 mb-1 text-center">{member.name}</h2>
-              <p className="text-gray-600 mb-2 text-center">{member.title}</p>
-              
-              {/* Social Icons */} 
-              <div className="flex space-x-3">
-                <a href="#" className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">
-                  <Mail className="w-5 h-5 text-gray-600" />
-                </a>
-                <a href="#" className="p-2 rounded-full bg-blue-600 hover:bg-blue-700 transition-colors">
-                  <Linkedin className="w-5 h-5 text-white" />
-                </a>
-              </div>
-            </div>
+          <DialogContent className="md:min-w-6xl w-full mx-auto md:mx-4 p-0 overflow-hidden">
+            <button
+              onClick={() => setOpen(false)}
+              className="absolute right-4 top-4 z-10 p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+            >
+              <X className="w-5 h-5 text-gray-600" />
+            </button>
             
-            {/* Right Side - Bio Content */}
-            <div className="flex-1 p-8 max-h-[30rem] md:max-h-96 overflow-y-auto my-auto md:w-[80%]">
-              <div className="prose prose-gray md:min-w-3xl text-sm md:text-lg">
-                {bioContent}
+            <div className="flex flex-col md:flex-row">
+              <div className="flex-shrink-0 md:p-8 bg-gray-50 flex flex-col items-center w-full md:w-[20%]">
+                <div className="w-32 md:w-48 h-32 md:h-48 rounded-full overflow-hidden mb-1 md:mb-6">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                
+                <h2 className="text-base md:text-2xl font-bold text-gray-900 mb-1 text-center">{member.name}</h2>
+                <p className="text-gray-600 mb-2 text-center">{member.title}</p>
+                
+                <div className="flex space-x-3">
+                  <a href="#" className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">
+                    <Mail className="w-5 h-5 text-gray-600" />
+                  </a>
+                  <a href="#" className="p-2 rounded-full bg-blue-600 hover:bg-blue-700 transition-colors">
+                    <Linkedin className="w-5 h-5 text-white" />
+                  </a>
+                </div>
+              </div>
+              
+              <div className="flex-1 p-8 max-h-[30rem] md:max-h-96 overflow-y-auto my-auto md:w-[80%]">
+                <div className="prose prose-gray md:min-w-3xl text-sm md:text-lg">
+                  {bioContent}
+                </div>
               </div>
             </div>
-          </div>
-        </DialogContent>
-      </Dialog>
-      
-      {/* Name and Title */}
-      <h3 className="text-xl font-semibold text-gray-900 mb-1">{member.name}</h3>
-      <p className="text-gray-600 mb-4">{member.title}</p>
-      
-      {/* Social Icons */}
-      <div className="z-50 flex space-x-3">
-        <a href="#" className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">
-          <Mail className="w-5 h-5 text-gray-600" />
-        </a>
-        <a href="#" className="p-2 rounded-full bg-blue-600 hover:bg-blue-700 transition-colors">
-          <Linkedin className="w-5 h-5 text-white" />
-        </a>
-      </div>
-    </div>
+          </DialogContent>
+        </Dialog>
+        
+        <motion.h3 
+          className="text-xl font-semibold text-gray-900 mb-1"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+        >
+          {member.name}
+        </motion.h3>
+        <motion.p 
+          className="text-gray-600 mb-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4 }}
+        >
+          {member.title}
+        </motion.p>
+        
+        <motion.div 
+          className="z-50 flex space-x-3"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+        >
+          <a href="#" className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">
+            <Mail className="w-5 h-5 text-gray-600" />
+          </a>
+          <a href="#" className="p-2 rounded-full bg-blue-600 hover:bg-blue-700 transition-colors">
+            <Linkedin className="w-5 h-5 text-white" />
+          </a>
+        </motion.div>
+      </motion.div>
+    </FadeInOnScroll>
   );
 };
 
@@ -311,75 +356,104 @@ const Section2 = ({ scrollYProgress }) => {
 };
  
 export const AboutLeftCard = ({image, title, description}) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+
   return (
-    <section className="md:my-32 md:mb-10 my-32 bg-sky-200 py-4 rounded-md mx-4 md:mx-0">
+    <motion.section 
+      ref={ref}
+      className="md:my-32 md:mb-10 my-32 bg-sky-200 py-4 rounded-md mx-4 md:mx-0"
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
       <div className="max-w-[1600px] mx-auto flex flex-col justify-center">
-          <div className="mx-2 md:mx-0 flex flex-col md:flex-row items-center z-20">
+        <div className="mx-2 md:mx-0 flex flex-col md:flex-row items-center z-20">
+          <motion.div 
+            className="relative md:w-[40%] flex flex-col justify-center items-center z-20"
+            initial={{ opacity: 0, x: -50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <figure className='grid place-content-center overflow-hidden'>
+              <img
+                src={image}
+                alt="about images"
+                className='transition-all duration-300 w-full h-full align-bottom object-cover rounded-none hover:scale-105'
+              />
+            </figure>         
+          </motion.div>
 
-              {/* image card  */}
-            <div className="relative md:w-[40%] flex flex-col justify-center items-center z-20">
-              <figure className='grid place-content-center overflow-hidden'>
-                <img
-                  src={image}
-                  alt="about images"
-                  className='transition-all duration-300  w-full h-full align-bottom object-cover rounded-none'
-                />
-              </figure>         
-            </div>
-              {/* content  */}
-            <div className="md:w-[60%] max-h-screen flex flex-col items-center justify-center">
-              <h2 className=" font-semibold text-2xl my-10 md:text-5xl text-blue-800 tracking-wide z-50"> {title} </h2>
-              <p className="text-black py-4 px-2 text-thin tracking-tight text-xs md:text-base">
-                {description}
-              </p>
-            </div>
-          
-          </div>
+          <motion.div 
+            className="md:w-[60%] max-h-screen flex flex-col items-center justify-center"
+            initial={{ opacity: 0, x: 50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <h2 className="font-semibold text-2xl my-10 md:text-5xl text-blue-800 tracking-wide z-50"> {title} </h2>
+            <p className="text-black py-4 px-2 text-thin tracking-tight text-xs md:text-base">
+              {description}
+            </p>
+          </motion.div>
+        </div>
       </div>
-    </section>
-
+    </motion.section>
   )
-}   
+}     
 
-export  const AboutRightCard = ({image, title, description}) => {
+export const AboutRightCard = ({image, title, description}) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+
   return (
-    <section className="md:my-32 md:mb-10 my-32 bg-sky-200 py-4 rounded-md mx-4 md:mx-0">
+    <motion.section 
+      ref={ref}
+      className="md:my-32 md:mb-10 my-32 bg-sky-200 py-4 rounded-md mx-4 md:mx-0"
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
       <div className="max-w-[1600px] mx-auto flex flex-col justify-center">
-          <div className="mx-2 md:mx-0 flex flex-col md:flex-row items-center z-20">
+        <div className="mx-2 md:mx-0 flex flex-col md:flex-row items-center z-20">
+          <motion.div 
+            className="md:w-[60%] max-h-screen flex flex-col items-center justify-center"
+            initial={{ opacity: 0, x: -50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <h2 className="font-semibold text-2xl my-10 md:text-5xl text-blue-800 tracking-wide z-50"> {title} </h2>
+            <p className="text-black py-4 px-2 text-thin tracking-tight text-xs md:text-base">
+              {description}
+            </p>
+          </motion.div>
 
-              
-            
-              {/* content  */}
-            <div className="md:w-[60%] max-h-screen flex flex-col items-center justify-center">
-              <h2 className=" font-semibold text-2xl my-10 md:text-5xl text-blue-800 tracking-wide z-50"> {title} </h2>
-              <p className="text-black py-4 px-2 text-thin tracking-tight text-xs md:text-base">
-                {description}
-              </p>
-            </div>
-
-              {/* image card  */}
-            <div className="relative md:w-[40%] flex flex-col justify-center items-center z-20">
-              <figure className='grid place-content-center overflow-hidden'>
-                <img
-                  src={image}
-                  alt="about images"
-                  className='transition-all duration-300  w-full h-full align-bottom object-cover rounded-none'
-                />
-              </figure>         
-            </div>
-          
-          </div>
+          <motion.div 
+            className="relative md:w-[40%] flex flex-col justify-center items-center z-20"
+            initial={{ opacity: 0, x: 50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <figure className='grid place-content-center overflow-hidden'>
+              <img
+                src={image}
+                alt="about images"
+                className='transition-all duration-300 w-full h-full align-bottom object-cover rounded-none hover:scale-105'
+              />
+            </figure>         
+          </motion.div>
+        </div>
       </div>
-    </section>
-
+    </motion.section>
   )
 } 
 
 const OurCoreTeam = () => {
   return (
     <section className="z-20">
-      <h1 className="text-3xl font-bold md:text-5xl text-center z-50">Our Core Team</h1>
-      <div className="grid grid-col-1  md:grid-cols-3 max-w-6xl mx-auto my-4 md:my-20">
+      <FadeInOnScroll>
+        <h1 className="text-3xl font-bold md:text-5xl text-center z-50">Our Core Team</h1>
+      </FadeInOnScroll>
+      <div className="grid grid-col-1 md:grid-cols-3 max-w-6xl mx-auto my-4 md:my-20">
         {team.map((member, index) => (
           <BioCard 
             key={index} 

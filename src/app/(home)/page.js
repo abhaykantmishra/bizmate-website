@@ -3,6 +3,7 @@
 import Image from "next/image";
 import React, { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
+import { motion, useInView } from 'motion/react';
 
 import { Hero } from "./Hero";
 import {AboutUs} from "./AboutUs";
@@ -11,6 +12,31 @@ import { Core } from "./Core";
 import { WhyChooseUs } from "./WhyChooseUs";
 import { Experience } from "./Experience";
 import { CTA } from "./CTA";
+import { BackgroundProvider } from "@/providers/background-provider";
+
+// Animated section wrapper
+const AnimatedSection = ({ children, delay = 0, direction = "up" }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  
+  const variants = {
+    up: { y: 50, opacity: 0 },
+    down: { y: -50, opacity: 0 },
+    left: { x: 50, opacity: 0 },
+    right: { x: -50, opacity: 0 }
+  };
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={variants[direction]}
+      animate={isInView ? { x: 0, y: 0, opacity: 1 } : variants[direction]}
+      transition={{ duration: 0.8, delay, ease: "easeOut" }}
+    >
+      {children}
+    </motion.div>
+  );
+};
 
 export default function Home() {
   const [position, setPosition] = useState({ x: 0, y: 0 })
@@ -33,12 +59,11 @@ export default function Home() {
     };
 
     const handleScroll = () => {
-      // Use last known mouse position
       updatePosition(lastMouse.current.x, lastMouse.current.y);
     };
 
     window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("scroll", handleScroll, true); // true = capture phase, catches scrolls on all ancestors
+    window.addEventListener("scroll", handleScroll, true);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
@@ -47,43 +72,42 @@ export default function Home() {
   }, []);
   
   return (
-    <main className="flex h-full mx-auto flex-col">
-      <div 
-        ref={containerRef}
-        className="relative flex h-full w-full items-center justify-center bg-white dark:bg-black">
-        <div
-            className={cn(
-              "absolute inset-0",
-              "[background-size:40px_40px]",
-              "[background-image:linear-gradient(to_right,#e4e4e7_1px,transparent_1px),linear-gradient(to_bottom,#e4e4e7_1px,transparent_1px)]",
-              "dark:[background-image:linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)]",
-            )}
-        />
-        {/* Blurred circle following the mouse */}
-        <div 
-            className="hidden md:block absolute bg-blue-500 rounded-full blur-3xl opacity-50 w-50 h-50 transition-all duration-300 ease-out"
-            style={{
-              left: `${position.x}px`,
-              top: `${position.y}px`,
-              transform: 'translate(-50%, -50%)',
-            }}
-        />
-        {/* Radial gradient for the container to give a faded look */}
-        <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_50%,black)] dark:bg-black"></div>
-        
+    <BackgroundProvider>
         <div className="">
-          <Hero />
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <Hero />
+          </motion.div>
+          
           <div className="max-w-7xl mx-auto">
-          <Services />  
-          <AboutUs />
-          <Core />
-          <WhyChooseUs />
-          <Experience />
-          <CTA />
+            <AnimatedSection delay={0.2}>
+              <Services />  
+            </AnimatedSection>
+            
+            <AnimatedSection delay={0.1} direction="left">
+              <AboutUs />
+            </AnimatedSection>
+            
+            <AnimatedSection delay={0.2} direction="right">
+              <Core />
+            </AnimatedSection>
+            
+            <AnimatedSection delay={0.1}>
+              <WhyChooseUs />
+            </AnimatedSection>
+            
+            <AnimatedSection delay={0.2} direction="left">
+              <Experience />
+            </AnimatedSection>
+            
+            <AnimatedSection delay={0.1}>
+              <CTA />
+            </AnimatedSection>
           </div>
         </div>
-      </div>
-    </main>
-   
+    </BackgroundProvider>
   );
 }

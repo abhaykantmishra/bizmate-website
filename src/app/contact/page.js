@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { ContactForm } from "@/components/contact-us";
 import Faq from "@/components/faq";
+import { BackgroundProvider } from "@/providers/background-provider";
 
 const faqs = [
     {
@@ -29,10 +30,14 @@ const faqs = [
 ]
 
 export default function ContactPage() {
-
     const [position, setPosition] = useState({ x: 0, y: 0 })
+    const [isPageVisible, setIsPageVisible] = useState(false);
+    const [isFaqVisible, setIsFaqVisible] = useState(false);
+    
     const lastMouse = useRef({ x: 0, y: 0 });
     const containerRef = useRef(null);
+    const pageRef = useRef(null);
+    const faqRef = useRef(null);
     
     useEffect(() => {
       const updatePosition = (clientX, clientY) => {
@@ -50,53 +55,97 @@ export default function ContactPage() {
       };
 
       const handleScroll = () => {
-        // Use last known mouse position
         updatePosition(lastMouse.current.x, lastMouse.current.y);
       };
 
       window.addEventListener("mousemove", handleMouseMove);
-      window.addEventListener("scroll", handleScroll, true); // true = capture phase, catches scrolls on all ancestors
+      window.addEventListener("scroll", handleScroll, true);
     
-        return () => {
-          window.removeEventListener("mousemove", handleMouseMove);
-          window.removeEventListener("scroll", handleScroll, true);
-        };
-      }, []);
+      return () => {
+        window.removeEventListener("mousemove", handleMouseMove);
+        window.removeEventListener("scroll", handleScroll, true);
+      };
+    }, []);
 
-  return (
-    <main className="flex h-full mx-auto flex-col">
-        <div
-            ref={containerRef}
-            className="relative flex h-full w-full items-center justify-center bg-white dark:bg-black"
-        >
-            <div
-                className={cn(
-                  "absolute inset-0",
-                  "[background-size:40px_40px]",
-                  "[background-image:linear-gradient(to_right,#e4e4e7_1px,transparent_1px),linear-gradient(to_bottom,#e4e4e7_1px,transparent_1px)]",
-                  "dark:[background-image:linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)]",
-                )}
-            />
-            {/* Blurred circle following the mouse */}
+    // Intersection Observer for page animation
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsPageVisible(true);
+                    observer.unobserve(entry.target);
+                }
+            },
+            {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            }
+        );
+
+        if (pageRef.current) {
+            observer.observe(pageRef.current);
+        }
+
+        return () => observer.disconnect();
+    }, []);
+
+    // Intersection Observer for FAQ section
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsFaqVisible(true);
+                    observer.unobserve(entry.target);
+                }
+            },
+            {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            }
+        );
+
+        if (faqRef.current) {
+            observer.observe(faqRef.current);
+        }
+
+        return () => observer.disconnect();
+    }, []);
+
+    return (
+        <BackgroundProvider>
             <div 
-                className="absolute bg-blue-500 rounded-full blur-3xl opacity-50 w-50 h-50 transition-all duration-300 ease-out"
-                style={{
-                  left: `${position.x}px`,
-                  top: `${position.y}px`,
-                  transform: 'translate(-50%, -50%)',
-                }}
-            />
-            {/* Radial gradient for the container to give a faded look */}
-            <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_50%,black)] dark:bg-black"></div>
-            <div className="w-full mb-40">
-                <ContactForm />
-                <div className="max-w-6xl mx-auto">
-                  <div className="mx-6">
-                    <Faq faqs={faqs} title={"Platform"} />
-                  </div>
+                ref={pageRef}
+                className={`w-full mb-40 transition-all duration-700 ease-out ${
+                    isPageVisible 
+                        ? 'opacity-100 translate-y-0' 
+                        : 'opacity-0 translate-y-4'
+                }`}
+            >
+                {/* ContactForm component already has its own animations */}
+                <div className={`transition-all duration-600 ease-out delay-100 ${
+                    isPageVisible ? 'opacity-100' : 'opacity-0'
+                }`}>
+                    <ContactForm />
+                </div>
+                
+                {/* FAQ Section with animation */}
+                <div 
+                    ref={faqRef}
+                    className={`max-w-6xl mx-auto transition-all duration-600 ease-out ${
+                        isFaqVisible 
+                            ? 'opacity-100 translate-y-0' 
+                            : 'opacity-0 translate-y-6'
+                    }`}
+                >
+                    <div className={`mx-6 transition-all duration-500 ease-out delay-150 ${
+                        isFaqVisible 
+                            ? 'opacity-100 translate-y-0' 
+                            : 'opacity-0 translate-y-3'
+                    }`}>
+                        <Faq faqs={faqs} title={"Platform"} />
+                    </div>
                 </div>
             </div>
-        </div>
-    </main>
-  )
+        </BackgroundProvider>
+    )
 }
