@@ -6,7 +6,7 @@ export function Experience(){
     return (
         <section className="my-20">
             <div className="container mx-auto flex flex-col justify-center z-20">
-                <h2 className="text-2xl md:text-5xl font-bold text-center z-20">Experience</h2>
+                <h2 className="text-2xl md:text-5xl font-bold text-center z-20 my-20">Our Experience</h2>
 
                 <div className="w-full flex md:flex-row flex-col">
                     <div className="hidden md:block w-1/2">
@@ -23,29 +23,49 @@ export function Experience(){
                 </div>
 
                 {/* Count up section */}
-                <div id="count" className="w-full grid grid-cols-2 md:flex md:flex-row z-20  bg-neutral-100 rounded-md mb-10">
-                    <div className="card-hover-line md:w-[30%] z-20 px-10 mx-3 md:mx-0 flex flex-col items-center justify-center bg-neutral-50">
+                <div id="count" className="flex md:flex-row flex-col z-20 mx-4 bg-neutral-100 shadow-2xl p-2 rounded-md mb-10">
+                    <div className="md:w-[30%] card-hover-line z-20 px-10 mx-0 flex flex-col items-center justify-center hover:bg-white">
                         <p className="font-bold text-lg md:text-4xl text-blue-600 p-0 m-0">Our Stats</p>
-                        <p className="hidden md:block font-bold text-2xl md:text-4xl text-blue-600">of Success</p>
+                        <p className="font-bold text-lg md:text-4xl text-blue-600 p-0 m-0">of Success</p>
                     </div>
                     {/* <Separator orientation="vertical" className="text-black z-20" /> */}
-                    <div className="md:w-[20%] z-20 mx-4 md:mx-10 my-4 md:my-10">
-                        <div className="text-2xl md:text-5xl font-bold text-purple-500">
-                            <CountUp start={0} end={90} duration={1000} decimals={0} easing="easeOut" />%
+                    <div className="md:w-[70%] grid grid-cols-2 md:grid-cols-3 ">
+                        <div className="z-20 px-4 md:px-10 py-4 md:py-10 border-1 border-blue-700 m-1 hover:bg-white">
+                            <div className="text-2xl md:text-4xl font-bold text-blue-500">
+                                <CountUp start={0} end={30} duration={1000} decimals={0} easing="easeOut" />+ yrs
+                            </div>
+                            <div className="text-black text-sm md:text-xl">HR Experience</div>
                         </div>
-                        <div className="text-black text-sm md:text-xl">No of placements</div>
-                    </div>
-                    <div className="md:w-[20%] z-20 mx-4 md:mx-10 my-4 md:my-10">
-                        <div className="text-2xl md:text-5xl font-bold text-purple-500">
-                            <CountUp start={0} end={95} duration={1000} decimals={0} easing="easeOut" />%
+                        <div className="z-20 px-4 md:px-10 py-4 md:py-10 border-1 border-blue-700 m-1 hover:bg-white">
+                            <div className="text-2xl md:text-4xl font-bold text-blue-500">
+                                <CountUp start={0} end={2000} duration={1000} decimals={0} easing="easeOut" />+
+                            </div>
+                            <div className="text-black text-sm md:text-xl">Client count</div>
                         </div>
-                        <div className="text-black text-sm md:text-xl">Client satisfaction</div>
-                    </div>
-                    <div className="md:w-[20%] z-20 mx-4 md:mx-10 my-4 md:my-10">
-                        <div className="text-2xl md:text-5xl font-bold text-purple-500">
-                            <CountUp start={0} end={87} duration={1000} decimals={0} easing="easeOut" />%
+                        <div className="z-20 px-4 md:px-10 py-4 md:py-10 border-1 border-blue-700 m-1 hover:bg-white">
+                            <div className="text-2xl md:text-4xl font-bold text-blue-500">
+                                <CountUp start={0} end={40} duration={1000} decimals={0} easing="easeOut" />+
+                            </div>
+                            <div className="text-black text-sm md:text-xl">Industries</div>
                         </div>
-                        <div className="text-black text-sm md:text-xl">Industry Specialization</div>
+                        <div className="z-20 px-4 md:px-10 py-4 md:py-10 border-1 border-blue-700 m-1 hover:bg-white">
+                            <div className="text-2xl md:text-4xl font-bold text-blue-500">
+                                <CountUp start={0} end={3000} duration={1000} decimals={0} easing="easeOut" />+
+                            </div>
+                            <div className="text-black text-sm md:text-xl">Hires</div>
+                        </div>
+                        <div className="z-20 px-4 md:px-10 py-4 md:py-10 border-1 border-blue-700 m-1 hover:bg-white">
+                            <div className="text-2xl md:text-4xl font-bold text-blue-500">
+                                <CountUp start={0} end={95} duration={1000} decimals={0} easing="easeOut" />%
+                            </div>
+                            <div className="text-black text-sm md:text-xl">Retention rate</div>
+                        </div>
+                        <div className="z-20 px-4 md:px-10 py-4 md:py-10 border-1 border-blue-700 m-1 hover:bg-white">
+                            <div className="text-2xl md:text-4xl font-bold text-blue-500">
+                                <CountUp start={0} end={87} duration={1000} decimals={0} easing="easeOut" />+
+                            </div>
+                            <div className="text-black text-sm md:text-xl">Coaching sessions</div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -72,8 +72,8 @@ export default function Home() {
   }, []);
   
   return (
-    <BackgroundProvider>
-        <div className="">
+    <BackgroundProvider className="w-full md:max-w-7xl mx-auto">
+        <div className="w-full md:max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

@@ -33,6 +33,7 @@
   --color-secondary: var(--secondary);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary: var(--primary);
+  --color-cteal: var(--cteal)
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
@@ -52,6 +53,7 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
   --primary: #0f62fe;
+  --cteal: #00d1cf;
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -206,3 +208,43 @@ body {
   @apply text-cyan-400 hover:text-cyan-300 underline;
 }
 
+/* body {
+    overflow: -moz-scrollbars-none; 
+    -ms-overflow-style: none; 
+} */
+
+/* body::-webkit-scrollbar { 
+    width: 0px;  /* Remove scrollbar space */
+    /* background: transparent;  /* Optional: just make scrollbar invisible */
+    /* display: none; Chrome/Safari/Webkit */
+/* } */
+
+
+
+body {
+    overflow-x: hidden;  /* Hide horizontal scrollbar */
+    overflow-y: auto;    /* Keep vertical scrollbar */
+}
+
+/* Alternative: Hide horizontal scrollbar but allow horizontal scrolling */
+/* body {
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+body::-webkit-scrollbar:horizontal {
+    display: none; /* Hide horizontal scrollbar in Chrome/Safari/Webkit */
+/* } */
+
+/* Firefox - hide only horizontal scrollbar */
+/* html {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+} */
+
+/* @-moz-document url-prefix() {
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+/* }  */

@@ -69,7 +69,7 @@ export function ServiceCard ({title, description, image, url}) {
                 }`}>
                     {title}
                 </CardTitle>
-                <CardDescription className={`max-h-[100px] md:max-h-[180px] overflow-y-clip text-start text-black text-xs md:text-sm my-5 transition-all duration-700 ease-out delay-400 ${
+                <CardDescription className={`max-h-[100px] md:max-h-[180px] overflow-y-clip text-start text-black text-xs md:text-base my-5 transition-all duration-700 ease-out delay-400 ${
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                 }`}>
                     {description}   

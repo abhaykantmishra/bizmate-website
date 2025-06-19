@@ -20,7 +20,7 @@ export function Footer() {
             <div className="m-0">
               <h3 className="text-xl font-bold mb-4">BizMate HR Solutions</h3>
               <p className="text-sky-100">
-                Transforming HR operations for businesses worldwide with innovative solutions.
+                People | Process | Performance
               </p>
             </div>
 
@@ -44,7 +44,12 @@ export function Footer() {
                 </li>
                 <li>
                   <Link href="/#" className="font-medium text-white transition-colors hover:text-blue-700">
-                    Blog
+                    Terms & Conditions
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#" className="font-medium text-white transition-colors hover:text-blue-700">
+                    Privacy Policy
                   </Link>
                 </li>
               </ul>

@@ -1,51 +1,142 @@
-import StickyScroll from "@/components/sticky-scroll"
-import { image_url } from "@/constant/image"
-import { AboutLeftCard } from "../about/page"
-import { AboutRightCard } from "../about/page"
+import React, { useState } from "react";
+import { cn } from "@/lib/utils";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import { image_url } from "@/constant/image";
 
-const aboutContent = [
-    {
-      title: "Who We Are",
-      content:
-        "BizMate HR Solutions is a leading provider of comprehensive human resources services designed to help businesses optimize their workforce management. With years of experience in the industry, we've helped hundreds of organizations transform their HR operations.",
-    },
-    {
-      title: "Our Mission",
-      content:
-        "Our mission is to empower businesses with innovative HR solutions that drive growth, enhance employee satisfaction, and ensure compliance with evolving regulations.",
-    },
-    {
-      title: "Our Vision",
-      content:
-        "To be the most trusted partner for businesses seeking to excel through effective human resource management and strategic workforce planning.",
-    },
-]
+// Assign a pastel background for each tab
+const tabBg = [
+	"bg-[#E3F2FD]", // Mission - light blue
+	"bg-[#FFF8E1]", // Vision - light yellow
+	"bg-[#E8F5E9]", // Idea - light green
+];
 
-const content = [
-  "Out of Sea of Sameness, Bizmate by virtue of decades of working experience in varied Industries & functions of its partners & consultants, lifts the Employees value proposition for organizational growth",
-  "To be a respected Consultancy firm recognised by Our client as most trusted partner for delivering excellence by providing most suitable solutions for their business need.",
-  "To be a solution provider to our client for their business related to its critical yet most complicated resource i.e Human Resource in its entire gamut and sphere be it related to policy, system or process under one umbrella."
-]
+const tabs = [
+	{
+		label: "Mission",
+		content:
+			"To help organizations unlock the power of people through tailored HR strategies, leadership coaching, compliance frameworks, and culture-first advisory — driving long-term growth and resilience.",
+		image: image_url, // Replace with your actual image path
+	},
+	{
+		label: "Vision",
+		content:
+			"To become the most trusted partner for businesses seeking to build empowered, purpose-driven teams — by delivering transformational HR solutions rooted in empathy, expertise, and execution.",
+		image: image_url, // Replace with your actual image path
+	},
+	{
+		label: "Idea",
+		content:
+			"We believe that people are the true differentiators of any business. BizMate was born out of the need to align human potential with strategic growth — creating workplaces where both people and profits thrive.",
+		image: image_url, // Replace with your actual image path
+	},
+];
+
+const tabUnderlineVariants = {
+	initial: { width: 0, left: 0 },
+	animate: (custom) => ({
+		width: custom.width,
+		left: custom.left,
+		transition: { type: "spring", stiffness: 300, damping: 30 },
+	}),
+};
 
 export function AboutUs() {
-    return (
+	const [activeTab, setActiveTab] = useState(0);
+	const [tabRects, setTabRects] = useState([]);
+	const tabRefs = React.useRef([]);
 
+	React.useEffect(() => {
+		setTabRects(tabRefs.current.map((ref) => ref?.getBoundingClientRect()));
+	}, [activeTab]);
 
+	// For underline animation
+	const tabListRef = React.useRef(null);
+	const [tabListRect, setTabListRect] = useState(null);
+	React.useEffect(() => {
+		if (tabListRef.current) {
+			setTabListRect(tabListRef.current.getBoundingClientRect());
+		}
+	}, []);
 
-      <section id="idea-vision-mission mb-96 mx-5 md:mx-0">
+	// Calculate underline position and width
+	let underlineProps = { width: 0, left: 0 };
+	if (tabRects[activeTab] && tabListRect) {
+		underlineProps = {
+			width: tabRects[activeTab].width,
+			left: tabRects[activeTab].left - tabListRect.left,
+		};
+	}
 
-        <h1 className="sticky top-14 md:top-20 z-0 text-center text-xl md:text-5xl font-bold mt-40">About Us</h1>
-
-        <div className="sticky top-22 md:top-44 max-w-[1600px] md:mx-auto mt-32">
-          <AboutLeftCard image={image_url} title={"Our Idea"} description={content[0]} />
-        </div>
-        <div className="sticky top-22 md:top-44 max-w-[1600px] md:mx-auto">
-          <AboutRightCard image={image_url} title={"Our Vision"} description={content[1]} />
-        </div>
-        <div className="sticky top-22 md:top-44 max-w-[1600px] md:mx-auto mb-32">
-          <AboutLeftCard image={image_url} title={"Our Mission"} description={content[2]} />
-        </div>           
-      </section>
-
-    )
+	return (
+		<section id="idea-vision-mission" className="mb-32 mx-5 md:mx-0 z-20">
+			<h1 className="relative z-20 text-center text-xl md:text-5xl font-bold mt-40 mb-10">
+				About Us
+			</h1>
+			<div className="relative flex justify-center mb-8 z-20">
+				<div
+					ref={tabListRef}
+					className="inline-flex rounded-full overflow-hidden bg-primary/10 shadow-md"
+				>
+					{tabs.map((tab, idx) => (
+						<button
+							key={tab.label}
+							ref={(el) => (tabRefs.current[idx] = el)}
+							className={cn(
+								"px-6 py-2 md:px-12 md:py-3 rounded-none font-semibold transition-all duration-200 relative",
+								idx === activeTab
+									? "bg-primary text-primary-foreground shadow"
+									: "text-primary hover:bg-primary/20"
+							)}
+							onClick={() => setActiveTab(idx)}
+						>
+							{tab.label}
+						</button>
+					))}
+				</div>
+			</div>
+			<div
+				className={cn(
+					"flex flex-col md:flex-row items-center gap-8 md:gap-16 md:max-w-7xl mx-auto rounded-xl shadow-xl p-6 md:p-16 transition-all duration-300",
+					// tabBg[activeTab],
+					"bg-[#8da13d]",
+					"bg-opacity-80 dark:bg-opacity-60"
+				)}
+			>
+				<AnimatePresence mode="wait" className="bg-[#8da13d]">
+					<motion.div
+						key={activeTab}
+						initial={{ opacity: 0, x: 60, scale: 0.95 }}
+						animate={{ opacity: 1, x: 0, scale: 1 }}
+						exit={{ opacity: 0, x: -60, scale: 0.95 }}
+						transition={{ duration: 0.5, type: "spring", bounce: 0.2 }}
+						className="md:w-1/2 flex justify-center"
+					>
+						<img
+							src={tabs[activeTab].image}
+							alt={tabs[activeTab].label}
+							width={440}
+							height={320}
+							className="rounded-xl object-cover shadow-xl border-4 border-primary/20"
+							style={{ maxHeight: 320, background: "#f3f4f6" }}
+						/>
+					</motion.div>
+				</AnimatePresence>
+				<motion.div
+					key={tabs[activeTab].label + "-content"}
+					initial={{ opacity: 0, y: 40 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.5, type: "spring", bounce: 0.2 }}
+					className=" md:w-1/2"
+				>
+					<h2 className="text-2xl md:text-4xl font-bold mb-4 text-primary drop-shadow">
+						{tabs[activeTab].label}
+					</h2>
+					<p className="text-lg md:text-xl text-gray-700 dark:text-gray-200 leading-relaxed relative z-20">
+						{tabs[activeTab].content}
+					</p>
+				</motion.div>
+			</div>
+		</section>
+	);
 }
