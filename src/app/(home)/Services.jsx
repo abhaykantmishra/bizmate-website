@@ -66,9 +66,9 @@ export function Services() {
         <div className="container mx-auto">
       
           <h2 className="text-2xl md:text-5xl font-bold text-sky-950 text-center z-20">Our Expertise</h2>
-          <div className="flex flex-col gap-1 my-4 w-full mx-auto">
-            <p className={"text-blue-600 text-base text-center md:text-2xl" }> From recruitment to leadership coaching,</p>
-            <p className={"text-blue-600 text-base text-center md:text-2xl" }> We design HR solutions that grow with you</p>
+          <div className="flex flex-col gap-1 mt-6 mb-4 w-full mx-auto">
+            <p className={"font-serif font-semibold tracking-normal text-teal-500 text-lg text-center md:text-3xl" }> From recruitment to leadership coaching,</p>
+            <p className={"font-serif font-semibold tracking-normal text-teal-500 text-lg text-center md:text-3xl" }> We design HR solutions that grow with you</p>
           </div>
 
           <div className="w-full h-0 bg-sky-950 z-20 mt-2 mb-12 md:mb-20" />

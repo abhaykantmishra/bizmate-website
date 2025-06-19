@@ -62,7 +62,7 @@ export function ServiceCard ({title, description, image, url}) {
                     />
                 </div>
             </CardHeader>
-            <CardContent className="relative bg-neutral-100 z-20 hover:bg-neutral-200 h-[200px] md:h-[300px]">
+            <CardContent className="relative bg-neutral-100 z-20 hover:bg-neutral-200 h-[230px] md:h-[300px]">
                 <CardTitle className={`text-lg md:text-2xl font-bold text-center my-5 text-blue-600 transition-all duration-700 ease-out delay-300 ${
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                 }`}>

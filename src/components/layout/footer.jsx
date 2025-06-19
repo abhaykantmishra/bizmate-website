@@ -15,7 +15,7 @@ export function Footer() {
       <div className="relative bg-sky-900">
         <footer className=" w-full absolute bottom-0 ] h-full bg-sky-900 text-white py-12 z-50">
         <div className="w-full  bg-sky-900 mx-auto z-50">
-          <div className="w-full mx-auto bg-sky-900 grid grid-cols-1 md:grid-cols-3 gap-8 z-50 px-10">
+          <div className="w-full mx-auto bg-sky-900 grid grid-cols-1 md:grid-cols-3 gap-8 z-50 px-4 md:px-10">
             
             <div className="m-0">
               <h3 className="text-xl font-bold mb-4">BizMate HR Solutions</h3>
@@ -114,7 +114,7 @@ export function Footer() {
           </div>
 
           <div className="border-t border-sky-800 mt-8 pt-8 text-center text-sky-200">
-            <p className="pb-5">&copy; {new Date().getFullYear()} BizMate HR Solutions. All rights reserved.</p>
+            <p className="pb-2 md:pb-5">&copy; {new Date().getFullYear()} BizMate HR Solutions. All rights reserved.</p>
           </div>
         </div>
       </footer>

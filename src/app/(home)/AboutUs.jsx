@@ -3,6 +3,8 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { image_url } from "@/constant/image";
+import { HoverButton } from "@/components/hover-button";
+import Link from "next/link";
 
 // Assign a pastel background for each tab
 const tabBg = [
@@ -133,7 +135,13 @@ export function AboutUs() {
 					<p className="text-lg md:text-xl text-gray-700 dark:text-gray-200 leading-relaxed relative z-20">
 						{tabs[activeTab].content}
 					</p>
+					<Link href="/about" className="my-2">
+						<HoverButton isPrimary={true} hoverColor="#fff" className={"hover:border-white hover:text-primary text-xs md:text-sm py-2 md:py-[11px] my-10"}>
+							Read More
+						</HoverButton>
+					</Link>
 				</motion.div>
+				
 			</div>
 		</section>
 	);

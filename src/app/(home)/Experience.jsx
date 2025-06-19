@@ -9,7 +9,7 @@ export function Experience(){
                 <h2 className="text-2xl md:text-5xl font-bold text-center z-20 my-20">Our Experience</h2>
 
                 <div className="w-full flex md:flex-row flex-col">
-                    <div className="hidden md:block w-1/2">
+                    <div className="md:w-1/2">
                         <img src={image_url} alt="experience" />
                     </div>
                     <div 
@@ -23,8 +23,8 @@ export function Experience(){
                 </div>
 
                 {/* Count up section */}
-                <div id="count" className="flex md:flex-row flex-col z-20 mx-4 bg-neutral-100 shadow-2xl p-2 rounded-md mb-10">
-                    <div className="md:w-[30%] card-hover-line z-20 px-10 mx-0 flex flex-col items-center justify-center hover:bg-white">
+                <div id="count" className="flex md:flex-row flex-col z-20 mx-4 bg-neutral-100 shadow-2xl p-2 rounded-md my-10">
+                    <div className="md:w-[30%] card-hover-line z-20 px-10 mx-0 py-8 md:py-0 flex flex-col items-center justify-center hover:bg-white">
                         <p className="font-bold text-lg md:text-4xl text-blue-600 p-0 m-0">Our Stats</p>
                         <p className="font-bold text-lg md:text-4xl text-blue-600 p-0 m-0">of Success</p>
                     </div>

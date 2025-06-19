@@ -1,38 +1,38 @@
 import { SmallCard } from "@/components/small-card"
 import { image_url } from "@/constant/image"
-import { CheckCircle, User } from "lucide-react"
+import { Award, CheckCircle, GraduationCap, Repeat, Settings, ShieldCheck, Target, User, Workflow } from "lucide-react"
 import { CoreCard } from "./Core"
 
 const content = [
     {
-        icon:<User className="w-8 h-8 text-accent text-start" />,
+        icon:<Award className="w-8 h-8 text-accent text-start" />,
         title: "Proven HR Leadership",
         description:"With over 35 years of industry experience, our founder brings deep insight, strategic thinking, and hands-on expertise to every engagement.",
         className: "bg-gradient-to-br from-rust-400 to-violet-500 border-white/10 hover:from-blue-600 hover:to-violet-700"
 
     },
     {
-        icon:<User className="w-8 h-8 text-accent" />,
+        icon:<Target className="w-8 h-8 text-accent" />,
         title: "Outcome-Driven Solutions",
         description:"We co-create HR strategies that align with your business goals — measurable, scalable, and built for growth."
     },
     {
-        icon:<User className="w-8 h-8 text-accent" />,
+        icon:<GraduationCap className="w-8 h-8 text-accent" />,
         title: "Trusted Coaching Credentials",
         description:"Led by an ICF PCC-certified coach, our leadership and transformation offerings bring global coaching standards to Indian workplaces."
     },
     {
-        icon:<User className="w-8 h-8 text-accent" />,
+        icon:<Settings className="w-8 h-8 text-accent" />,
         title: "Tailored, Not Templated",
         description:`No cookie-cutter playbooks. Every solution is customized to your people, pace, and priorities.`
     },
     {
-        icon:<User className="w-8 h-8 text-accent" />,
+        icon:<ShieldCheck className="w-8 h-8 text-accent" />,
         title: "Compliance You Can Rely On",
         description:`Stay ahead of regulatory changes with clear, actionable compliance roadmaps — from labour codes to ESG-linked practices.`
     },
     {
-        icon:<User className="w-8 h-8 text-accent" />,
+        icon:<Repeat className="w-8 h-8 text-accent" />,
         title: "End-to-End People Partner",
         description:`From hiring to succession, culture to compliance — we're your single partner across the HR lifecycle.`
     },
