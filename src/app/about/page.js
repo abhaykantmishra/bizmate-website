@@ -10,6 +10,7 @@ import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { useState } from "react";
 import { X, Mail, Linkedin } from "lucide-react";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
+import { AboutUs } from "../(home)/AboutUs";
 
 
 const content = [
@@ -257,19 +258,8 @@ export default function AboutPage() {
             </main>
 
             {/* Idea Vision Mission section  */}
-            <section id="idea-vision-mission mb-96 mx-5 md:mx-0">
-              <div className="sticky top-14 md:top-44 max-w-[1600px] md:mx-auto mt-32">
-                <AboutLeftCard image={image_url} title={"Our Idea"} description={content[0]} />
-              </div>
-
-              <div className="sticky top-14 md:top-44 max-w-[1600px] md:mx-auto">
-                <AboutRightCard image={image_url} title={"Our Vision"} description={content[1]} />
-              </div>
-
-              <div className="sticky top-14 md:top-44 max-w-[1600px] md:mx-auto mb-32">
-                <AboutLeftCard image={image_url} title={"Our Mission"} description={content[2]} />
-              </div>
-              
+            <section className="md:mt-0 mt-[700px]">
+              <AboutUs />
             </section>
 
             {/* Core Team  */}
@@ -344,7 +334,7 @@ const Section2 = ({ scrollYProgress }) => {
       className="relative h-screen w-screen top-10 pt-0 md:pt-40  md:mb-40 mb-10"
     >
       <div className="relative mx-3 md:mx-0">
-        <div className="sticky top-0 max-w-[1600px] mx-auto text-xs">
+        <div className="sticky top-0 max-w-7xl mx-auto text-xs">
         <WhyChooseUs />
         {/* <AboutLeftCard image={image_url} title={"Our journey"} description={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae."} /> */}
         </div>
