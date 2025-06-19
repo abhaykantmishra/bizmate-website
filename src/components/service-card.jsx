@@ -42,9 +42,9 @@ export function ServiceCard ({title, description, image, url}) {
             <CardHeader className="">
                 <div className="hidden md:block mx-auto my-auto ">
                     <img 
-                        width={300} 
-                        height={300} 
-                        className={`object-cover z-20 text-center transition-all duration-700 ease-out delay-200 ${
+                        // width={300} 
+                        // height={300} 
+                        className={`h-[300px] object-cover z-20 text-center transition-all duration-700 ease-out delay-200 ${
                             isVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
                         }`} 
                         src={image} 
@@ -53,9 +53,9 @@ export function ServiceCard ({title, description, image, url}) {
                 </div>
                 <div className="md:hidden block mx-auto my-auto">
                     <img 
-                        width={200} 
-                        height={200} 
-                        className={`object-cover z-20 text-center transition-all duration-700 ease-out delay-200 ${
+                        // width={200} 
+                        // height={200} 
+                        className={`h-[200px] object-cover z-20 text-center transition-all duration-700 ease-out delay-200 ${
                             isVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
                         }`} 
                         src={image} 

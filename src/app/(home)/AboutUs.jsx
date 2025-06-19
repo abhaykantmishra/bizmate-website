@@ -16,19 +16,19 @@ const tabs = [
 		label: "Mission",
 		content:
 			"To help organizations unlock the power of people through tailored HR strategies, leadership coaching, compliance frameworks, and culture-first advisory — driving long-term growth and resilience.",
-		image: image_url, // Replace with your actual image path
+		image: "/assets/image6.jpeg", // Replace with your actual image path
 	},
 	{
 		label: "Vision",
 		content:
 			"To become the most trusted partner for businesses seeking to build empowered, purpose-driven teams — by delivering transformational HR solutions rooted in empathy, expertise, and execution.",
-		image: image_url, // Replace with your actual image path
+		image: "/assets/image5.jpeg", // Replace with your actual image path
 	},
 	{
 		label: "Idea",
 		content:
 			"We believe that people are the true differentiators of any business. BizMate was born out of the need to align human potential with strategic growth — creating workplaces where both people and profits thrive.",
-		image: image_url, // Replace with your actual image path
+		image: "/assets/image2.jpeg", // Replace with your actual image path
 	},
 ];
 

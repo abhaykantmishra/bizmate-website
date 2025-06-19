@@ -25,25 +25,25 @@ const services = [
   {
     title: "Recruitment Solutions",
     description:"Find the right people, faster. We use structured hiring methods and deep market mapping to ensure your talent pipeline is future-proof.",
-    image: image_url,
+    image: "/assets/image7.jpeg",
     url:"/services/recruitment"
   },
   {
     title: "Staffing Solutions",
     description:"Scale quickly with flexible staffing — contract, temp-to-perm, or turnkey project hires — without compromising on talent quality.",
-    image: image_url,
+    image: "/assets/image1.jpeg",
     url:"/services/staffing"
   },
   {
     title: "Talent Management",
     description:"Identify, develop, and retain top performers with performance frameworks, potential mapping, and succession planning designed for long-term growth.",
-    image: image_url,
+    image: "/assets/image9.jpeg",
     url:"/services/talent-management"
   },
   {
     title: "Culture & Engagement Consulting",
     description:"Create a culture of inclusion, performance, and purpose. Our diagnostics and interventions turn values into visible behaviors.",
-    image: image_url,
+    image: "/assets/image8.jpeg",
     url:"/services/hr-consultancy"
   },
   {

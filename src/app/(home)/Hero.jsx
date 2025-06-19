@@ -116,7 +116,7 @@ export function Hero() {
         </div>
 
         <div className="max-w-full mx-1 md:mx-0 md:max-w-1/2 max-h-screen flex items-center">
-          <img className="w-full" src={image_url} alt="" />
+          <img className="w-full bg-transparent" src="/assets/image4.jpeg" alt="hero" />
         </div>
       </div>
     </section>
