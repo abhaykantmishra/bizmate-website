@@ -24,19 +24,19 @@ const TypewriterLoop = ( {strings, subtitle, className} ) => {
       if (currentText.length < currentString.length) {
         timeout = setTimeout(() => {
           setCurrentText(prev => currentString.slice(0, prev.length + 1));
-        }, 50); // Typing speed
+        }, 40); // Typing speed
       } else {
         // Finished typing, wait 1 second then start erasing
         timeout = setTimeout(() => {
           setIsTyping(false);
-        }, 2000);
+        }, 1300);
       }
     } else {
       // Erasing phase
       if (currentText.length > 0) {
         timeout = setTimeout(() => {
           setCurrentText(prev => prev.slice(0, -1));
-        }, 50); // Erasing speed (faster than typing)
+        }, 20); // Erasing speed (faster than typing)
       } else {
         // Finished erasing, move to next string
         timeout = setTimeout(() => {

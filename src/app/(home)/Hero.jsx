@@ -66,13 +66,13 @@ export function Hero() {
           <TextGenerateEffect className={"text-teal-500 text-2xl font-medium italic" }words={tagline} />
           </div>
 
-          <div className="z-20 my-5 tracking-wide">
+          <div className="z-20 my-0 md:my-5 tracking-wide">
             <h3>
-            <TypewriterLoop className={"md:text-3xl font-medium text-blue-500 text-base"} 
+            <TypewriterLoop className={"md:text-3xl font-serif font-semibold text-blue-500 text-xl"} 
               strings={
-                [ "Connecting Talent with opportunity", 
-                  "Developing Robust HR Process", 
-                  "Aligning HR with Business"
+                [ "Connecting Talent with opportunity...", 
+                  "Developing Robust HR Process...", 
+                  "Aligning HR with Business..."
                 ]} 
             />
             </h3>

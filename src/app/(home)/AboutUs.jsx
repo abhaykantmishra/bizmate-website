@@ -76,7 +76,7 @@ export function AboutUs() {
 			<div className="relative flex justify-center mb-8 z-20">
 				<div
 					ref={tabListRef}
-					className="inline-flex rounded-full overflow-hidden bg-primary/10 shadow-md"
+					className="inline-flex bg-white rounded-full overflow-hidden shadow-md"
 				>
 					{tabs.map((tab, idx) => (
 						<button
@@ -97,10 +97,8 @@ export function AboutUs() {
 			</div>
 			<div
 				className={cn(
-					"flex flex-col md:flex-row items-center gap-8 md:gap-16 md:max-w-7xl mx-auto rounded-xl shadow-xl p-6 md:p-16 transition-all duration-300",
-					// tabBg[activeTab],
-					"bg-[#8da13d]",
-					"bg-opacity-80 dark:bg-opacity-60"
+					"relative z-20 flex flex-col bg-gradient-to-br from-yellow-100 to-green-500 md:flex-row items-center gap-8 md:gap-16 md:max-w-7xl mx-auto rounded-xl shadow-xl p-6 md:p-16 transition-all duration-300",
+					"bg-opacity-90 dark:bg-opacity-60"
 				)}
 			>
 				<AnimatePresence mode="wait" className="bg-[#8da13d]">

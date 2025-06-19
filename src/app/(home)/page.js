@@ -73,7 +73,7 @@ export default function Home() {
   
   return (
     <BackgroundProvider className="w-full md:max-w-7xl mx-auto">
-        <div className="w-full md:max-w-7xl mx-auto">
+        <div className="w-full md:max-w-7xl mx-auto" id="hero" >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -83,27 +83,27 @@ export default function Home() {
           </motion.div>
           
           <div className="max-w-7xl mx-auto">
-            <AnimatedSection delay={0.2}>
+            <AnimatedSection id="services" delay={0.2}>
               <Services />  
             </AnimatedSection>
             
-            <AnimatedSection delay={0.1} direction="left">
+            <AnimatedSection  id="about" delay={0.1} direction="left">
               <AboutUs />
             </AnimatedSection>
             
-            <AnimatedSection delay={0.2} direction="right">
+            <AnimatedSection id="core" delay={0.2} direction="right">
               <Core />
             </AnimatedSection>
             
-            <AnimatedSection delay={0.1}>
+            <AnimatedSection id="why-bizmate" delay={0.1}>
               <WhyChooseUs />
             </AnimatedSection>
             
-            <AnimatedSection delay={0.2} direction="left">
+            <AnimatedSection id="experience" delay={0.2} direction="left">
               <Experience />
             </AnimatedSection>
             
-            <AnimatedSection delay={0.1}>
+            <AnimatedSection id="cta1" delay={0.1}>
               <CTA />
             </AnimatedSection>
           </div>

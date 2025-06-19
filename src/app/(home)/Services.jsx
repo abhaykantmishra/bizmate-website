@@ -62,7 +62,7 @@ const services = [
 
 export function Services() {
     return (
-        <section className="my-20 relative">
+        <section className="my-20 relative" id="services">
         <div className="container mx-auto">
       
           <h2 className="text-2xl md:text-5xl font-bold text-sky-950 text-center z-20">Our Expertise</h2>
