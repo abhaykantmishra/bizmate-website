@@ -93,7 +93,7 @@ export function Hero() {
             <span className="text-blue-500">Our mission?</span> To be your strategic HR partner, empowering you to adapt and thrive in today&apos;s rapidly evolving world of work.
           </p>
           <div className="flex flex-col md:flex-row mt-20 z-20">
-            <Link href="/contact">
+            <Link href="/#demo">
             <HoverButton
               className={"mb-5"}
               hoverColor="#000"
@@ -105,7 +105,7 @@ export function Hero() {
             <HoverButton isPrimary={false} hoverColor="#0f62fe" className={"hover:border-white hover:text-white"}
               onClick={() => {
                 console.log("clicked")
-                window.location.href = "/contact"
+                window.location.href = "/"
               }}
             >
               Contact Us Now

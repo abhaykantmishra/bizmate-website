@@ -13,6 +13,7 @@ import { WhyChooseUs } from "./WhyChooseUs";
 import { Experience } from "./Experience";
 import { CTA } from "./CTA";
 import { BackgroundProvider } from "@/providers/background-provider";
+import { CTABookDemo } from "@/components/cta-demo";
 
 // Animated section wrapper
 const AnimatedSection = ({ children, delay = 0, direction = "up" }) => {
@@ -82,7 +83,7 @@ export default function Home() {
             <Hero />
           </motion.div>
           
-          <div className="max-w-7xl mx-auto">
+          <div className="max-w-7xl mx-auto mb-60">
             <AnimatedSection id="services" delay={0.2}>
               <Services />  
             </AnimatedSection>
@@ -102,10 +103,15 @@ export default function Home() {
             <AnimatedSection id="experience" delay={0.2} direction="left">
               <Experience />
             </AnimatedSection>
-            
+
+            <AnimatedSection id="cta1" delay={0.2}>
+              <CTABookDemo />
+            </AnimatedSection>
+
             <AnimatedSection id="cta1" delay={0.1}>
               <CTA />
             </AnimatedSection>
+            
           </div>
         </div>
     </BackgroundProvider>

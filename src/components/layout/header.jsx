@@ -29,7 +29,7 @@ const geistMono = Geist_Mono({
 const navigation = [
 //   { name: 'NETWORK', href: '/network' },
   { name: 'Home', href: '/' },
-  { name: 'Services', href: '#' },
+  { name: 'Services', href: '/#services' },
   { name: 'About-us', href: '/about' },
   // { name: 'EDITORIAL CORNER', href: '/editorial' },
 //   { name: 'INITIATIVES', href: '/initiatives' },
@@ -90,50 +90,6 @@ export function Header() {
         {/* Desktop Navigation */}
         <div className="hidden md:flex md:flex-1 md:justify-end md:gap-5 w-full">
           {navigation.map((item) => {
-            if(item.name === 'Services') {
-              return (
-                <div key={item.name} >
-                <DropdownMenu  open={dropdownOpen} onOpenChange={setDropdownOpen}>
-                  <div
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
-                    className="relative"
-                  >
-                    <DropdownMenuTrigger asChild>
-                      <span className="font-medium text-black transition-colors hover:text-blue-700 cursor-pointer flex items-center">
-                        {item.name}
-                        <span className="ml-2 transition-all duration-1000">
-                          {isHovered ? (
-                            <ChevronUp className="h-4 w-4" />
-                          ) : (
-                            <ChevronDown className="h-4 w-4" />
-                          )}
-                        </span>
-                      </span>
-                    </DropdownMenuTrigger>
-                    
-                    <DropdownMenuContent 
-                      side="bottom" 
-                      align="start"
-                      className="w-full bg-blue-200 rounded-none transition-all duration-500"
-                    >
-                      {
-                        services.map((service, idx) => (
-                           <DropdownMenuItem key={idx} className={"rounded-none px-2 hover:bg-white"}>
-                            <Link href={service.href} className="font-medium text-black transition-colors hover:text-blue-700">
-                              {service.name}
-                            </Link>
-                          </DropdownMenuItem>
-                        ))
-                      }
-                    </DropdownMenuContent>
-                  </div>
-                </DropdownMenu>
-                </div>
-
-              )
-            }
-            else{
               return (
                 <Link
                   key={item.name}
@@ -144,7 +100,7 @@ export function Header() {
                 </Link>
               )
             }
-          })}
+          )}
         </div>
 
         {/* Mobile Navigation */}

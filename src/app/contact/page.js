@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { ContactForm } from "@/components/contact-us";
 import Faq from "@/components/faq";
+import { CTABookDemo } from "@/components/cta-demo";
 import { BackgroundProvider } from "@/providers/background-provider";
 
 const faqs = [
@@ -126,6 +127,13 @@ export default function ContactPage() {
                     isPageVisible ? 'opacity-100' : 'opacity-0'
                 }`}>
                     <ContactForm />
+                </div>
+
+                {/* Animated CTABookDemo section */}
+                <div className={`max-w-6xl mx-10 mt-72 transition-all duration-700 ease-out delay-150 ${
+                    isPageVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                }`}>
+                    <CTABookDemo className1={"max-w-6xl mx-10"} className2="rounded-none text-purple-500" />
                 </div>
                 
                 {/* FAQ Section with animation */}

@@ -221,9 +221,17 @@ body {
 
 
 
+/* @media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+} */
+
+
 body {
-    overflow-x: hidden;  /* Hide horizontal scrollbar */
-    overflow-y: auto;    /* Keep vertical scrollbar */
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 /* Alternative: Hide horizontal scrollbar but allow horizontal scrolling */
