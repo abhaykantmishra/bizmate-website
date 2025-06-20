@@ -7,19 +7,19 @@ const services = [
   {
     title: "Strategic HR Advisory",
     description:"Align your HR strategy with business goals through audits, policy frameworks, and scalable solutions tailored to your organization's maturity.",
-    image: image_url,
+    image: "/assets/image10.jpeg",
     url:"/services/recruitment"
   },
   {
     title: "Leadership Development Programs",
     description:"Build next-gen leaders through experiential learning, behavioral assessments, and coaching-led programs grounded in globally recognized methodologies.",
-    image: image_url,
+    image: "/assets/image11.jpeg",
     url:"/services/recruitment"
   },
   {
     title: "Executive Coaching",
     description:"1:1 coaching for CXOs, founders, and HR leaders to enhance clarity, influence, and resilience. Led by an ICF PCC-certified coach with deep industry insight.",
-    image: image_url,
+    image: "/assets/image12.jpeg",
     url:"/services/recruitment"
   },
   {
@@ -49,13 +49,13 @@ const services = [
   {
     title: "HSE Services",
     description:"Drive a safety-first culture with tailored Health, Safety & Environment consulting — from risk audits to training rollouts and compliance tools.",
-    image: image_url,
+    image: "/assets/hse.jpeg",
     url:"/services/hse"
   },
   {
     title: "Customized Solutions",
     description:"Whether you're scaling fast or going lean, we design flexible, plug-and-play HR solutions to match your pace and priorities.",
-    image: image_url,
+    image: "/assets/customized.jpeg",
     url:"/services/customized-solutions"
   }
 ]

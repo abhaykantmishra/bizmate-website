@@ -18,19 +18,19 @@ const tabs = [
 		label: "Mission",
 		content:
 			"To help organizations unlock the power of people through tailored HR strategies, leadership coaching, compliance frameworks, and culture-first advisory — driving long-term growth and resilience.",
-		image: "/assets/image6.jpeg", // Replace with your actual image path
+		image: "/assets/mission.jpeg", 
 	},
 	{
 		label: "Vision",
 		content:
 			"To become the most trusted partner for businesses seeking to build empowered, purpose-driven teams — by delivering transformational HR solutions rooted in empathy, expertise, and execution.",
-		image: "/assets/image5.jpeg", // Replace with your actual image path
+		image: "/assets/vision.jpeg", 
 	},
 	{
 		label: "Idea",
 		content:
 			"We believe that people are the true differentiators of any business. BizMate was born out of the need to align human potential with strategic growth — creating workplaces where both people and profits thrive.",
-		image: "/assets/image2.jpeg", // Replace with your actual image path
+		image: "/assets/image2.jpeg", 
 	},
 ];
 
@@ -132,7 +132,7 @@ export function AboutUs() {
 					<h2 className="text-2xl md:text-4xl font-bold mb-4 text-primary drop-shadow">
 						{tabs[activeTab].label}
 					</h2>
-					<p className="text-lg md:text-xl text-gray-700 dark:text-gray-200 leading-relaxed relative z-20">
+					<p className="text-sm md:text-lg text-gray-700 dark:text-gray-200 leading-relaxed relative z-20">
 						{tabs[activeTab].content}
 					</p>
 					<Link href="/about" className="my-2">

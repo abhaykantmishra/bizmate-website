@@ -250,7 +250,7 @@ export default function AboutPage() {
          <BackgroundProvider>
 
           <div className="md:max-w-7xl w-full">
-            <main ref={container} className='relative w-full min-h-screen my-auto'>
+            <main ref={container} className='relative w-full md:min-h-screen my-auto mx-auto'>
               {/* <div className="relative h-[200vh]"> */}
               <HeroSection id="about-us-hero" scrollYProgress={scrollYProgress} />
               <Section2 id="our-journy" scrollYProgress={scrollYProgress} />
@@ -258,7 +258,7 @@ export default function AboutPage() {
             </main>
 
             {/* Idea Vision Mission section  */}
-            <section className="md:mt-0 mt-[700px]">
+            <section className="">
               <AboutUs />
             </section>
 
@@ -271,13 +271,13 @@ export default function AboutPage() {
 
             {/* Testimonials  */}
             <section className="relative max-w-[24rem] md:max-w-6xl mx-auto w-full z-20 md:my-32" id="testimonials" >
-              <div className="max-w-2xl md:max-w-7xl mx-auto z-20 mb-40">
+              <div className="max-w-full md:max-w-7xl mx-auto z-20 mb-40">
                 <h1 className="z-20 text-center md:text-5xl font-bold md:my-10">Testimonials</h1>
-              <InfiniteMovingCards
-                    items={testimonials}
-                    direction="right"
-                    speed="slow"
-                  />
+                <InfiniteMovingCards
+                      items={testimonials}
+                      direction="right"
+                      speed="slow"
+                />
               </div>
             </section>
 
@@ -303,7 +303,7 @@ const HeroSection = ({ scrollYProgress }) => {
       <div className="mx-4 md:min-h-[60vh] flex flex-col md:flex-row items-center justify-center z-0 bg-blue-100 rounded-md overflow-y-hidden">
         <div className="md:w-[40%] w-[90%] mx-auto my-2">
           <figure className="overflow-hidden mx-auto my-auto">
-          <img className="object-cover" src={image_url} alt={"about"} />
+          <img className="object-cover" src="/assets/image13.jpeg" alt={"about"} />
           </figure>
         </div>
 
@@ -331,7 +331,7 @@ const Section2 = ({ scrollYProgress }) => {
     <BackgroundProvider>
     <motion.section
       style={{ scale, rotate }}
-      className="relative h-screen w-screen top-10 pt-0 md:pt-40  md:mb-40 mb-10"
+      className="relative h-screen mx-4 md:w-screen top-10 pt-0 md:pt-40 md:mb-40 mb-[800px]"
     >
       <div className="relative mx-3 md:mx-0">
         <div className="sticky top-0 max-w-7xl mx-auto text-xs">

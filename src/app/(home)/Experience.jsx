@@ -10,7 +10,7 @@ export function Experience(){
 
                 <div className="w-full flex md:flex-row flex-col">
                     <div className="md:w-1/2">
-                        <img src={image_url} alt="experience" />
+                        <img src={"/assets/experience.jpeg"} alt="experience" />
                     </div>
                     <div 
                         // style={{backgroundImage: `url(${image_url})`, backgroundSize: "cover", opacity: 0.5}} 

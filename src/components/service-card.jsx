@@ -54,7 +54,7 @@ export function ServiceCard ({title, description, image, url}) {
                 </div>
                 <div className="md:hidden block mx-auto my-auto">
                     <img 
-                        className={`h-[200px] object-cover z-20 text-center transition-all duration-700 ease-out delay-200 ${
+                        className={`h-[180px] object-cover z-20 text-center transition-all duration-700 ease-out delay-200 ${
                             isVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
                         }`} 
                         src={image} 
@@ -62,13 +62,13 @@ export function ServiceCard ({title, description, image, url}) {
                     />
                 </div>
             </CardHeader>
-            <CardContent className="relative bg-neutral-100 z-20 hover:bg-neutral-200 h-[230px] md:h-[300px]">
+            <CardContent className="relative bg-neutral-100 z-20 hover:bg-neutral-200 h-[300px]">
                 <CardTitle className={`text-lg md:text-2xl font-bold text-center my-5 text-blue-600 transition-all duration-700 ease-out delay-300 ${
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                 }`}>
                     {title}
                 </CardTitle>
-                <CardDescription className={`max-h-[100px] md:max-h-[180px] overflow-y-clip text-start text-black text-xs md:text-base my-5 transition-all duration-700 ease-out delay-400 ${
+                <CardDescription className={`max-h-[100px] md:max-h-[180px] overflow-y-clip text-start text-black text-xs md:text-sm my-5 transition-all duration-700 ease-out delay-400 ${
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                 }`}>
                     {description}   
