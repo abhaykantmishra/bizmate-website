@@ -7,43 +7,49 @@ import { Card, CardContent } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
 import { useEffect, useRef, useState } from "react"
 
+// Assign a unique pastel/gradient/hover bg for each core value
 const coreValues = [
     {
-        icon: <Scale className="w-10 h-10 text-accent" />,
+        icon: <Scale className="w-10 h-10" />,
         title: "Integrity",
         tagline:"We do what's right — always.",
-        description:"We embrace and uphold the highest standards of personal and professional ethics, honesty and trust"
+        description:"We embrace and uphold the highest standards of personal and professional ethics, honesty and trust",
+        bg: "bg-gradient-to-br from-blue-100 via-blue-50 to-white hover:from-blue-200 hover:to-blue-300"
     },
     {
-        icon: <HeartPlus className="w-10 h-10 text-accent" />,
+        icon: <HeartPlus className="w-10 h-10" />,
         title: "Empathy",
         tagline:"People before process. Listening drives our solutions.",
-        description:"Our solutions are based not on the theories but with proven practical experience coupled with innovation which empowers Leaders & Managers at all levels to deliver excellence"
+        description:"Our solutions are based not on the theories but with proven practical experience coupled with innovation which empowers Leaders & Managers at all levels to deliver excellence",
+        bg: "bg-gradient-to-br from-pink-100 via-pink-50 to-white hover:from-pink-200 hover:to-pink-300"
     },
     {
-        icon: <Medal className="w-10 h-10 text-accent" />,
+        icon: <Medal className="w-10 h-10" />,
         title: "Excellence",
         tagline:"We hold ourselves to high standards in everything we do.",
-        description:"We are responsible to fulfill our commitments to colleagues and clients with clear understanding of the urgency and accountability inherent in those commitments"
+        description:"We are responsible to fulfill our commitments to colleagues and clients with clear understanding of the urgency and accountability inherent in those commitments",
+        bg: "bg-gradient-to-br from-yellow-100 via-yellow-50 to-white hover:from-yellow-200 hover:to-yellow-300"
     },
     {
-        icon: <Handshake className="w-10 h-10 text-accent" />,
+        icon: <Handshake className="w-10 h-10" />,
         title: "Collaboration",
         tagline:"We grow through partnerships — with clients and each other.",
-        description:"We work as a team and share knowledge for continuous improvement, learning and innovation."
+        description:"We work as a team and share knowledge for continuous improvement, learning and innovation.",
+        bg: "bg-gradient-to-br from-green-100 via-green-50 to-white hover:from-green-200 hover:to-green-300"
     },
     {
-        icon: <LucideArrowsUpFromLine className="w-10 h-10 text-accent" />,
+        icon: <LucideArrowsUpFromLine className="w-10 h-10" />,
         title: "Adaptability",
         tagline:"The world changes fast. So do we — with purpose.",
-        description:"We treat everyone with uncompromising respect, civility and fairness."
+        description:"We treat everyone with uncompromising respect, civility and fairness.",
+        bg: "bg-gradient-to-br from-purple-100 via-purple-50 to-white hover:from-purple-200 hover:to-purple-300"
     },
-    
     {
-        icon: <Fingerprint className="w-10 h-10 text-accent" />,
+        icon: <Fingerprint className="w-10 h-10" />,
         title: "Confidentiality",
         tagline:"We honor trust. Your data, culture, and people are protected.",
-        description:"We work as a team and share knowledge for continuous improvement, learning and innovation."
+        description:"We work as a team and share knowledge for continuous improvement, learning and innovation.",
+        bg: "bg-gradient-to-br from-gray-100 via-gray-50 to-white hover:from-gray-200 hover:to-gray-300"
     },
 ]
 
@@ -53,34 +59,21 @@ export function Core(){
         <div className="container mx-auto">
             <h2 className="text-2xl md:text-5xl sticky font-bold text-sky-950 text-center mt-40 mb-20">Our Core Values</h2>
 
-            {/* Bento not used now */}
-            <div className="hidden w-full mb-40">
-                <div className="w-[36%] h-[600px]">
-                    <SmallCard icon={coreValues[0].icon} title={coreValues[0].title} description={coreValues[0].description} className={"h-1/2 mx-2 mb-3"} />
-                    <SmallCard icon={coreValues[1].icon} title={coreValues[1].title} description={coreValues[1].description} className={"h-1/2 mx-2"} />
-                </div>
-                <SmallCard icon={coreValues[2].icon} title={coreValues[2].title} description={coreValues[2].description} className={"w-[28%] h-[612px] mx-2 mb-0 py-32"} />
-                <div className="w-[36%] h-[600px]">
-                    <SmallCard icon={coreValues[3].icon} title={coreValues[3].title} description={coreValues[3].description} className={"h-1/2 mx-2 mb-3"} />
-                    <SmallCard icon={coreValues[4].icon} title={coreValues[4].title} description={coreValues[4].description} className={"h-1/2 mx-2"} />
-                </div>
-            </div>
-
             <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 my-40">
-                <CoreCard icon={coreValues[0].icon} title={coreValues[0].title} description={coreValues[0].description} className={"mx-2 mb-3 text-base"} />
-                <CoreCard icon={coreValues[1].icon} title={coreValues[1].title} description={coreValues[1].description} className={"mx-2 mb-3 text-base"} />
-                <CoreCard icon={coreValues[2].icon} title={coreValues[2].title} description={coreValues[2].description} className={"mx-2 mb-3 text-base"} />
-                <CoreCard icon={coreValues[3].icon} title={coreValues[3].title} description={coreValues[3].description} className={"mx-2 mb-3 text-base"} />
-                <CoreCard icon={coreValues[4].icon} title={coreValues[4].title} description={coreValues[4].description} className={"mx-2 mb-3 text-base"} />
-                <CoreCard icon={coreValues[5].icon} title={coreValues[5].title} description={coreValues[5].description} className={"mx-2 mb-3 text-base"} />
+                {coreValues.map((val, idx) => (
+                    <CoreCard
+                        key={val.title}
+                        icon={val.icon}
+                        title={val.title}
+                        description={val.tagline}
+                        className={cn("mx-2 mb-3 text-base", val.bg)}
+                    />
+                ))}
             </div>
-            
         </div>
         </section>
     )
 }
-
-
 
 export function CoreCard({icon, title, description, className}) {
     const [isVisible, setIsVisible] = useState(false);
@@ -111,7 +104,7 @@ export function CoreCard({icon, title, description, className}) {
         <Card 
             ref={cardRef}
             className={cn(
-                "card-hover-line rounded-none bg-gradient-to-br from-rose-600 to-orange-700 border-white/10 hover:from-blue-600 hover:to-violet-700 transition-all shadow-2xl shadow-blue-400 cursor-pointer group hover:-translate-y-1 duration-700 ease-out",
+                "card-hover-line rounded-none border-white/10 transition-all shadow-2xl shadow-blue-400 cursor-pointer group hover:-translate-y-1 duration-700 ease-out",
                 isVisible 
                     ? 'opacity-100 translate-y-0 scale-100' 
                     : 'opacity-0 translate-y-6 scale-95',
@@ -125,12 +118,12 @@ export function CoreCard({icon, title, description, className}) {
                     }`}>
                         {icon}
                     </div>
-                    <h3 className={`md:text-2xl text-accent text-base font-bold transition-all duration-700 ease-out delay-300 ${
+                    <h3 className={`md:text-2xl text-base font-bold transition-all duration-700 ease-out delay-300 ${
                         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
                     }`}>
                         {title}
                     </h3>
-                    <p className={`text-accent font-medium transition-all duration-700 ease-out delay-400 ${
+                    <p className={`font-medium transition-all duration-700 ease-out delay-400 ${
                         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
                     }`}>
                         {description}
