@@ -135,6 +135,7 @@ export function Header() {
               {navigation.map((item) => {
               return (
                 <Link
+                  onClick={() => setIsOpen(false)}
                   key={item.name}
                   href={item.href}
                   className="font-medium text-black transition-colors hover:text-blue-700"
