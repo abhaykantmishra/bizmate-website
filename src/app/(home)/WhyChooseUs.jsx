@@ -44,7 +44,7 @@ const content = [
 
 export function WhyChooseUs() {
     return (
-        <section className="my-40">
+        <section className="md:my-40 mb-0">
 
            <h2 className="text-2xl md:text-5xl sticky font-bold text-sky-950 text-center mt-40 mb-20">Why Choose BizMate</h2>
 

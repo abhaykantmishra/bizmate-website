@@ -57,16 +57,16 @@ export function Core(){
     return (
         <section className="my-40">
         <div className="container mx-auto">
-            <h2 className="text-2xl md:text-5xl sticky font-bold text-sky-950 text-center mt-40 mb-20">Our Core Values</h2>
+            <h2 className="text-2xl md:text-5xl sticky font-bold text-sky-950 text-center my-10 md:my-20 md:mt-40">Our Core Values</h2>
 
-            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 my-40">
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 my-20">
                 {coreValues.map((val, idx) => (
                     <CoreCard
                         key={val.title}
                         icon={val.icon}
                         title={val.title}
                         description={val.tagline}
-                        className={cn("mx-2 mb-3 text-base", val.bg)}
+                        className={cn("md:mx-2 mx-6 mb-3 text-base", val.bg)}
                     />
                 ))}
             </div>

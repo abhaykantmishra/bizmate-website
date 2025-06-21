@@ -246,16 +246,63 @@ export default function AboutPage() {
       offset: ['start start', 'end end'],
     });
 
+    const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
+
     return (
          <BackgroundProvider>
 
           <div className="md:max-w-7xl w-full">
-            <main ref={container} className='relative w-full md:min-h-screen my-auto mx-auto'>
+            {/* Hero Desktop  */}
+            <main ref={container} className=' hidden md:block relative w-full md:min-h-screen my-auto mx-auto'>
               {/* <div className="relative h-[200vh]"> */}
               <HeroSection id="about-us-hero" scrollYProgress={scrollYProgress} />
               <Section2 id="our-journy" scrollYProgress={scrollYProgress} />
               {/* </div> */}
             </main>
+
+            {/* Hero Mobile  */}
+            <main className='md:hidden block relative w-full mx-auto'>
+                <motion.section
+                   style={{ scale }}
+                  className='sticky max-w-full md:max-w-7xl mx-auto md:my-10 font-semibold top-20 flex flex-col  text-black'
+                >
+
+                  <div className="mx-4 md:min-h-[60vh] flex flex-col md:flex-row items-center justify-center z-0 bg-blue-100 rounded-md overflow-y-hidden">
+                    <div className="md:w-[40%] w-[90%] mx-auto my-2">
+                      <figure className="overflow-hidden mx-auto my-auto">
+                      <img className="object-cover" src="/assets/image13.jpeg" alt={"about"} />
+                      </figure>
+                    </div>
+
+                    <div className="md:w-[60%] w-full">  
+                      <h1 className="md:text-5xl text-2xl text-blue-500 mt-2 md:my-4 mx-2 md:font-bold font-semibold text-center md:text-left">
+                        Building Careers.
+                        Building Organisations.
+                      </h1>
+                      <p className="text-black py-4 px-2 text-thin tracking-tight text-xs md:text-base">
+                        We are an HR Consultancy firm led by Mr. Atul Trikha having more than 30 years of experience of Industry and was inleadership role in a multinational company before donning thecap of <span className="text-blue-600 text-bold">“Entrepreneurship”</span>. Our advisors & consultants includemost experienced Industry veterans from various fields such as <span className="text-blue-600 text-bold">HR</span>, <span className="text-blue-600 text-bold">Research & Development</span>, <span className="text-blue-600 text-bold">Quality</span>, <span className="text-blue-600 text-bold">Marketing</span> etc.
+                      </p>
+                    </div>
+                  </div>
+
+                </motion.section>
+
+                <BackgroundProvider>
+                  <motion.section
+                    style={{ scale }}
+                    className="relative mx-4 md:w-screen pt-0 md:pt-40 md:mb-40"
+                  >
+                    <div className="relative mx-3 md:mx-0">
+                      <div className="sticky top-0 max-w-7xl mx-auto text-xs">
+                      <WhyChooseUs />
+                      {/* <AboutLeftCard image={image_url} title={"Our journey"} description={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae."} /> */}
+                      </div>
+                    </div>
+                    
+                  </motion.section>
+                </BackgroundProvider>
+            </main>
+            
 
             {/* Idea Vision Mission section  */}
             <section className="">

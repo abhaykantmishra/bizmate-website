@@ -71,8 +71,8 @@ export function AboutUs() {
 	}
 
 	return (
-		<section id="idea-vision-mission" className="mb-32 mx-5 md:mx-0 z-20">
-			<h1 className="relative z-20 text-center text-xl md:text-5xl font-bold mt-40 mb-10">
+		<section id="idea-vision-mission" className="mt-40 mb-32 mx-5 md:mx-0 z-20">
+			<h1 className="relative z-20 text-center text-xl md:text-5xl font-bold my-10 md:my-20 md:mt-40">
 				About Us
 			</h1>
 			<div className="relative flex justify-center mb-8 z-20">
