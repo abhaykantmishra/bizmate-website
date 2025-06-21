@@ -270,11 +270,11 @@ export default function AboutPage() {
                   <div className="mx-4 md:min-h-[60vh] flex flex-col md:flex-row items-center justify-center z-0 bg-blue-100 rounded-md overflow-y-hidden">
                     <div className="md:w-[40%] w-[90%] mx-auto my-2">
                       <figure className="overflow-hidden mx-auto my-auto">
-                      <img className="object-cover" src="/assets/image13.jpeg" alt={"about"} />
+                      <img className="object-cover w-72 h-72 mx-auto my-auto" src="/assets/image13.jpeg" alt={"about"} />
                       </figure>
                     </div>
 
-                    <div className="md:w-[60%] w-full">  
+                    <div className="md:w-[60%] w-full my-10">  
                       <h1 className="md:text-5xl text-2xl text-blue-500 mt-2 md:my-4 mx-2 md:font-bold font-semibold text-center md:text-left">
                         Building Careers.
                         Building Organisations.

@@ -123,17 +123,17 @@ export default function ContactPage() {
                 }`}
             >
                 {/* ContactForm component already has its own animations */}
-                <div className={`transition-all duration-600 ease-out delay-100 ${
+                <div className={`transition-all duration-600 ease-out delay-100 md:mx-0 ${
                     isPageVisible ? 'opacity-100' : 'opacity-0'
                 }`}>
                     <ContactForm />
                 </div>
 
                 {/* Animated CTABookDemo section */}
-                <div className={`max-w-6xl mx-10 mt-72 transition-all duration-700 ease-out delay-150 ${
+                <div className={`max-w-6xl md:mx-10 md:mt-72 transition-all duration-700 ease-out delay-150 ${
                     isPageVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                 }`}>
-                    <CTABookDemo className1={"max-w-6xl mx-10"} className2="rounded-none text-purple-500" />
+                    <CTABookDemo className1={"max-w-6xl mx-0 md:mx-15"} className2="rounded-none text-purple-500" />
                 </div>
                 
                 {/* FAQ Section with animation */}
@@ -145,7 +145,7 @@ export default function ContactPage() {
                             : 'opacity-0 translate-y-6'
                     }`}
                 >
-                    <div className={`mx-6 transition-all duration-500 ease-out delay-150 ${
+                    <div className={`md:mx-6 transition-all duration-500 ease-out delay-150 ${
                         isFaqVisible 
                             ? 'opacity-100 translate-y-0' 
                             : 'opacity-0 translate-y-3'

@@ -42,7 +42,7 @@ export function CTABookDemo({className1, className2}) {
   };
 
   return (
-    <section id="demo" className={cn("md:mt-20 mb-60 my-10 md:mx-0 mx-5", className1="")}>
+    <section id="demo" className={cn("md:mt-20 md:mb-60 my-10 md:mx-10", className1="")}>
       <div className="max-w-[1700px] mx-auto flex flex-col justify-center">
         <div className={cn("flex md:flex-row flex-col dark:bg-white bg-black shadow-2xl shadow-blue-700 p-3 rounded-none md:rounded-xl z-20 md:px-10 mx-2 md:mx-0 text-white",
             className2
