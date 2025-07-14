@@ -11,6 +11,8 @@ import { useState } from "react";
 import { X, Mail, Linkedin } from "lucide-react";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import { AboutUs } from "../(home)/AboutUs";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import TypewriterLoop from "@/components/ui/typewriter-loop";
 
 
 const content = [
@@ -344,7 +346,7 @@ const HeroSection = ({ scrollYProgress }) => {
     <>
     <motion.section
       style={{ scale, rotate }}
-      className='sticky max-w-full md:max-w-7xl mx-auto md:my-10 font-semibold top-20 h-screen flex flex-col  text-black'
+      className='sticky max-w-full md:max-w-7xl mx-auto md:my-10 top-20 h-screen flex flex-col  text-black'
     >
 
       <div className="mx-4 md:min-h-[60vh] flex flex-col md:flex-row items-center justify-center z-0 bg-blue-100 rounded-md overflow-y-hidden">
@@ -356,12 +358,32 @@ const HeroSection = ({ scrollYProgress }) => {
 
         <div className="md:w-[60%] w-full">  
           <h1 className="md:text-5xl text-2xl text-blue-500 mt-2 md:my-4 mx-2 md:font-bold font-semibold text-center md:text-left">
-            Building Careers.
-            Building Organisations.
+           Bizmate HR solutions
           </h1>
-          <p className="text-black py-4 px-2 text-thin tracking-tight text-xs md:text-base">
-            We are an HR Consultancy firm led by Mr. Atul Trikha having more than 30 years of experience of Industry and was inleadership role in a multinational company before donning thecap of <span className="text-blue-600 text-bold">“Entrepreneurship”</span>. Our advisors & consultants includemost experienced Industry veterans from various fields such as <span className="text-blue-600 text-bold">HR</span>, <span className="text-blue-600 text-bold">Research & Development</span>, <span className="text-blue-600 text-bold">Quality</span>, <span className="text-blue-600 text-bold">Marketing</span> etc.
+          <TextGenerateEffect className={"text-teal-500 text-xl md:text-2xl font-semibold italic mx-1"} 
+            words={"Empowering Organizations through Talent & Strategy"} 
+          />
+
+          <div className="z-20 my-0 md:my-2 tracking-wide">
+            <h3>
+            <TypewriterLoop className={"md:text-xl font-serif font-semibold text-blue-500 text-base mx-2 px-1" } 
+              strings={
+                [ "Specialized in Non-IT Hiring...", 
+                  "Coaching-led HR Strategy...", 
+                  "Trusted by SMEs & Corporates..."
+                ]} 
+            />
+            </h3>
+          </div>
+
+          <p className="text-black py-4 px-2 text-sm md:text-lg">
+            At Bizmate HR Solutions, we combine 30+ years of HR leadership with global coaching credentials to deliver scalable people strategies. Founded by a certified ICF PCC coach, we help organizations unlock the full potential of their people and performance.
           </p>
+
+          <p className="text-black py-4 px-2 text-sm md:text-lg italic font-semibold">
+            Our mission is to be your trusted HR partner—empowering you to adapt and thrive in today&apos;s dynamic workplace.
+          </p>
+
         </div>
       </div>
 

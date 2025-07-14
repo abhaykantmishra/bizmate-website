@@ -63,7 +63,7 @@ export function Hero() {
         >
           <div className="my-5 z-20">
           <h1 className="text-3xl md:text-5xl font-bold text-blue-800">BizMate HR Solutions</h1>
-          <TextGenerateEffect className={"text-teal-500 text-2xl font-medium italic" }words={tagline} />
+          <TextGenerateEffect className={"text-teal-500 text-2xl font-medium italic"} words={tagline} />
           </div>
 
           <div className="z-20 my-0 md:my-5 tracking-wide">
