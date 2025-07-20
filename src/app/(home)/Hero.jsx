@@ -62,7 +62,7 @@ export function Hero() {
           // style={{backgroundImage: `url(${image_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}
         >
           <div className="my-5 z-20">
-          <h1 className="text-3xl md:text-5xl font-bold text-blue-800">Bizmate HR Solutions</h1>
+          <h1 className="text-3xl md:text-5xl font-bold text-[#116474]">Bizmate HR Solutions</h1>
           <TextGenerateEffect className={"text-teal-500 text-2xl font-medium italic"} words={tagline} />
           </div>
 
