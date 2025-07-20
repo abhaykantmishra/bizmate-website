@@ -83,7 +83,7 @@ export function Header() {
             className="rounded-lg"
           />
           <span className="text-sm  md:text-lg font-bold sm:inline-block">
-            BizMate HR Solutions
+            Bizmate HR Solutions
           </span>
         </Link>
 

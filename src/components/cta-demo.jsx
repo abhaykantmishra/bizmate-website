@@ -3,7 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
-import { User, Mail, Building2, Briefcase, ShieldCheck, Users, GraduationCap, Calendar } from "lucide-react";
+import { User, Mail, Building2, Briefcase, ShieldCheck, Users, GraduationCap, Calendar, UserCheck, UserCheck2, BriefcaseBusiness, ClipboardCheck, MoreHorizontal } from "lucide-react";
 import { useState } from "react";
 
 export function CTABookDemo({className1, className2}) {
@@ -16,9 +16,12 @@ export function CTABookDemo({className1, className2}) {
   });
 
   const interestOptions = [
-    { label: "HR Audit", icon: <ShieldCheck className="w-5 h-5 mr-2 text-blue-600" /> },
-    { label: "Leadership Training", icon: <Users className="w-5 h-5 mr-2 text-blue-600" /> },
-    { label: "Mentorship", icon: <GraduationCap className="w-5 h-5 mr-2 text-blue-600" /> },
+    { label: "Talent Acquisition", icon: <Users className="w-5 h-5 mr-2 text-blue-600" /> },
+    { label: "Leadership Training", icon: <GraduationCap className="w-5 h-5 mr-2 text-blue-600" /> },
+    { label: "Executive Coaching", icon: <UserCheck2 className="w-5 h-5 mr-2 text-blue-600" /> },
+    { label: "Strategic HR Consulting & OD Intervention", icon: <BriefcaseBusiness className="w-5 h-5 mr-2 text-blue-600" /> },
+    { label: "HR Process & Compliance", icon: <ClipboardCheck className="w-5 h-5 mr-2 text-blue-600" /> },
+    { label: "Other", icon: <MoreHorizontal className="w-5 h-5 mr-2 text-blue-600" /> },
   ];
 
   const handleChange = (e) => {
@@ -51,19 +54,19 @@ export function CTABookDemo({className1, className2}) {
           <div className="md:w-1/2 w-full space-y-12 z-20 md:mx-0 my-10 md:my-5 flex flex-col justify-center">
             <div className="mb-0 md:mb-5">
               <h2 className=" text-3xl md:text-4xl font-bold mb-10 text-blue-500">
-                Book a Demo Call
+                Let&apos;s Accelerate Your HR Success 
               </h2>
 
-              <p className="text-base md:text-lg dark:text-neutral-300 mb-4 text-white">
-                <span className="font-semibold">Accelerate your HR transformation</span> with Bizmate&apos;s <b>HR Audit</b>, <b>Leadership Training</b>, and <b>Mentorship</b> solutions.
+              <p className="text-sm md:text-base dark:text-neutral-300 mb-4 text-white">
+                <span className="font-semibold text-base md:text-lg">Book a Free 30-min Strategy Call</span> <br /> with our Founder - Prashant Prem
               </p>
 
               <div className="flex items-start gap-3  dark:bg-blue-950 rounded-none p-4 border-1 mt-10">
                 <User className="w-10 h-10 text-blue-500" />
                 <div>
-                  <span className="font-semibold text-blue-500">Founder: ICF PCC Certified</span>
+                  <span className="font-semibold text-blue-500">CF-PCC Coach | Certified Corporate Trainer | Certified POSH Trainer | Certified OD  Practioner | 35+ Years of HR Leadership</span>
                   <p className="text-sm text-white dark:text-neutral-600 mt-1">
-                    Over 20 years of HR expertise. Led HR operations for multinational conglomerates across India and APAC. Recognized for building leadership roadmaps and mentoring future-ready teams.
+                    Prashant has led HR for top Indian and global firms, mentoring leaders, revamping culture, and building future-ready teams.
                   </p>
                 </div>
               </div>
@@ -71,18 +74,15 @@ export function CTABookDemo({className1, className2}) {
             </div>
 
             <div className="hidden md:flex flex-col gap-4 mt-6">
-              <div className="flex items-center gap-3">
-                <ShieldCheck className="w-6 h-6 text-blue-500" />
-                <span className="font-bold text-blue-500">HR Audit</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Users className="w-6 h-6 text-blue-500" />
-                <span className="font-bold text-blue-500">Leadership Training</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <GraduationCap className="w-6 h-6 text-blue-500" />
-                <span className="font-bold text-blue-500">Mentorship</span>
-              </div>
+              <h1 className="text-blue-500 text-base md:text-lg font-bold ">What would you'd like to explore: </h1>
+              {
+                interestOptions?.map((item, idx) => (
+                    <div key={idx} className="flex items-center gap-3">
+                      {item.icon}
+                      <span className="font-semibold text-blue-500">{item.label}</span>
+                    </div>
+                ))
+              }
             </div>
           </div>
 
@@ -165,8 +165,8 @@ export function CTABookDemo({className1, className2}) {
                 <Calendar className="w-5 h-5" />
                 Schedule Now
               </Button>
-              <p className="text-xs text-neutral-100 mt-2 text-center">
-                You’ll receive a calendar invite after submitting your details.
+              <p className="text-sm text-semibold text-neutral-100 mt-2 text-center">
+                You&apos;ll receive a calendar invite after submitting your details.
               </p>
             </form>
           </div>

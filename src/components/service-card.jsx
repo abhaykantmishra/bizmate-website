@@ -6,7 +6,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, Di
 import { useEffect, useRef, useState } from "react";
 import { X, Mail,Linkedin } from "lucide-react";
 
-export function ServiceCard ({title, description, image, url}) {
+export function ServiceCard ({title,subtitle, description, content, image, url}) {
     const [isVisible, setIsVisible] = useState(false);
     const [modalOpen, setModalOpen] = useState(false);
     const cardRef = useRef(null);
@@ -99,7 +99,7 @@ export function ServiceCard ({title, description, image, url}) {
                 
                 <div className="flex flex-col md:flex-row">
                 <div className="flex-shrink-0 md:p-8 bg-gray-50 flex flex-col items-center w-full md:w-[30%]">
-                    <div className="overflow-x-hidden mb-1 md:mb-6 mx-auto my-auto">
+                    <div className="overflow-x-hidden mx-auto my-auto">
                     <img
                         src={image}
                         alt={title}
@@ -111,15 +111,27 @@ export function ServiceCard ({title, description, image, url}) {
 
                 
                 
-                <div className="flex-1 p-8 max-h-[30rem] md:max-h-96 overflow-y-auto my-auto md:w-[80%]">
-                    <h2 className="text-base md:text-2xl font-bold text-gray-900 mb-1 text-center">{title}</h2>
-                    <p className="text-gray-600 mb-2 text-center">{title}</p>
+                <div className="flex-1 py-0 px-8 max-h-[30rem] md:max-h-[32rem] overflow-y-auto my-auto md:w-[80%]">
+                    <h2 className="text-base md:text-2xl font-bold text-blue-600 mb-0 py-1 text-center relative sticky top-0 bg-white">{title}</h2>
+                    <p className="text-gray-800 pb-2 text-center font-semibold relative sticky top-10 bg-white">{subtitle}</p>
                     <div className="overflow-y-auto prose prose-gray text-sm md:text-base">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum vero, expedita ipsum dolores aliquid illum officiis vel. Vel perferendis ea suscipit, quae eos temporibus similique id inventore. Quia, nisi temporibus.
-                    Exercitationem excepturi porro deleniti. Consequatur eveniet, maxime dolor suscipit ducimus et! Vitae necessitatibus quas doloribus. Unde sint, enim vel cumque, nisi itaque qui officia ratione velit saepe distinctio animi ea?
-                    Iste nobis tenetur aspernatur quaerat, maiores eveniet ab vel, hic sed quis inventore velit excepturi animi soluta repellendus illo porro ut tempore eos placeat magnam ipsa sequi debitis. Harum, minus.
-                    Perferendis ipsam maiores magni obcaecati! Molestias ullam dolorem repellat ea impedit enim in iste, qui possimus repudiandae! Tempora eum expedita voluptatibus, molestias sapiente odio ipsum, rem, doloribus necessitatibus minima placeat.
-                    Fugiat recusandae quasi amet obcaecati perferendis quos neque. Dicta facere aperiam sint id laboriosam. Deleniti facere, sit, cupiditate maiores, labore quam perspiciatis libero ea sequi quis rem. Sit, fuga ad.
+                      <span>
+                        {content || 
+                           <p>
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum vero, expedita ipsum dolores aliquid illum officiis vel. Vel perferendis ea suscipit, quae eos temporibus similique id inventore. Quia, nisi temporibus.
+                                Exercitationem excepturi porro deleniti. Consequatur eveniet, maxime dolor suscipit ducimus et! Vitae necessitatibus quas doloribus. Unde sint, enim vel cumque, nisi itaque qui officia ratione velit saepe distinctio animi ea?
+                                Iste nobis tenetur aspernatur quaerat, maiores eveniet ab vel, hic sed quis inventore velit excepturi animi soluta repellendus illo porro ut tempore eos placeat magnam ipsa sequi debitis. Harum, minus.
+                                Perferendis ipsam maiores magni obcaecati! Molestias ullam dolorem repellat ea impedit enim in iste, qui possimus repudiandae! Tempora eum expedita voluptatibus, molestias sapiente odio ipsum, rem, doloribus necessitatibus minima placeat.
+                                Fugiat recusandae quasi amet obcaecati perferendis quos neque. Dicta facere aperiam sint id laboriosam. Deleniti facere, sit, cupiditate maiores, labore quam perspiciatis libero ea sequi quis rem. Sit, fuga ad.
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum vero, expedita ipsum dolores aliquid illum officiis vel. Vel perferendis ea suscipit, quae eos temporibus similique id inventore. Quia, nisi temporibus.
+                                Exercitationem excepturi porro deleniti. Consequatur eveniet, maxime dolor suscipit ducimus et! Vitae necessitatibus quas doloribus. Unde sint, enim vel cumque, nisi itaque qui officia ratione velit saepe distinctio animi ea?
+                                Iste nobis tenetur aspernatur quaerat, maiores eveniet ab vel, hic sed quis inventore velit excepturi animi soluta repellendus illo porro ut tempore eos placeat magnam ipsa sequi debitis. Harum, minus.
+                                Perferendis ipsam maiores magni obcaecati! Molestias ullam dolorem repellat ea impedit enim in iste, qui possimus repudiandae! Tempora eum expedita voluptatibus, molestias sapiente odio ipsum, rem, doloribus necessitatibus minima placeat.
+                                Fugiat recusandae quasi amet obcaecati perferendis quos neque. Dicta facere aperiam sint id laboriosam. Deleniti facere, sit, cupiditate maiores, labore quam perspiciatis libero ea sequi quis rem. Sit, fuga ad.
+                            </p>
+
+                        }
+                      </span>
                     </div>
                 </div>
                 </div>

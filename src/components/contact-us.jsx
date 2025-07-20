@@ -40,7 +40,7 @@ export function ContactForm() {
                         <Textarea
                         id="message"
                         placeholder="Your message"
-                        className="min-h-[190px] md:text-lg rounded-none bg-white/5 border-white text-white placeholder:text-neutral-200"
+                        className="min-h-[130px] md:text-lg rounded-none bg-white/5 border-white text-white placeholder:text-neutral-200"
 
                         />
                     </div>
@@ -60,7 +60,7 @@ export function ContactForm() {
                     
                     <div className="space-y-6">
                     {/* Website Queries */}
-                    <div>
+                    {/* <div>
                         <h3 className="text-lg font-semibold mb-4 text-purple-400">Website Queries</h3>
                         <div className="space-y-4">
                         <div className="flex items-center gap-3">
@@ -76,22 +76,22 @@ export function ContactForm() {
                             </a>
                         </div>
                         </div>
-                    </div>
+                    </div> */}
 
                     {/* General Queries */}
                     <div>
                         <h3 className="text-lg font-semibold mb-4 text-purple-400">General Queries</h3>
                         <div className="space-y-4">
-                        <div className="flex items-center gap-3">
+                        <div className="text-base flex items-center gap-3">
                             <Phone className="w-5 h-5 text-purple-400" />
-                            <a href="tel:+9100000000" className="text-neutral-400 hover:text-white transition-colors">
-                            +91 0000 000000 (XYZ)
+                            <a href="tel:+919289397570" className="text-neutral-400 hover:text-white transition-colors">
+                            +91 9289397570
                             </a>
                         </div>
                         <div className="flex items-center gap-3">
                             <Mail className="w-5 h-5 text-purple-400" />
-                            <a href="mailto:query@bizmatehr.com" className="text-neutral-400 hover:text-white transition-colors">
-                            query@bizmatehr.com
+                            <a href="mailto:info@bizmatehr.com" className="text-neutral-400 hover:text-white transition-colors">
+                                info@bizmatehr.com
                             </a>
                         </div>
                         </div>
@@ -100,13 +100,12 @@ export function ContactForm() {
                     {/* Location */}
                     <div>
                         <h3 className="text-lg font-semibold mb-4 text-purple-400">Location</h3>
-                        <div className="flex items-start gap-3">
-                        <MapPin className="w-5 h-5 text-purple-400" />
-                        <p className="text-neutral-400">
-                            Bizmate Office<br />
-                            ABC, XYZ<br />
-                            Mumbai - 420008
-                        </p>
+                        <div className="flex flex-row items-center gap-3">
+                            <MapPin className="w-5 h-5 text-purple-400" />
+
+                            <p className="text-neutral-400">
+                                242 Sector-21C<br/> Faridabad, 121001
+                            </p>
                         </div>
                     </div>
 

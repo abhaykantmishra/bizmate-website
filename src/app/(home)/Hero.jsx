@@ -62,7 +62,7 @@ export function Hero() {
           // style={{backgroundImage: `url(${image_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}
         >
           <div className="my-5 z-20">
-          <h1 className="text-3xl md:text-5xl font-bold text-blue-800">BizMate HR Solutions</h1>
+          <h1 className="text-3xl md:text-5xl font-bold text-blue-800">Bizmate HR Solutions</h1>
           <TextGenerateEffect className={"text-teal-500 text-2xl font-medium italic"} words={tagline} />
           </div>
 
@@ -95,14 +95,16 @@ export function Hero() {
           <div className="flex flex-col md:flex-row mt-20 z-20">
             <Link href="/#demo">
             <HoverButton
-              className={"mb-5"}
-              hoverColor="#000"
+              className={"text-lg font-semibold mb-5 bg-orange-600"}
+              hoverColor="#0f62fe"
             > 
               <p>Accelerate with Bizmate</p>
             </HoverButton>
             </Link>
             <Link href="/contact">
-            <HoverButton isPrimary={false} hoverColor="#0f62fe" className={"hover:border-white hover:text-white"}
+            <HoverButton  
+              className={"text-lg font-semibold mb-5 bg-[#0f62fe] hover:text-blue-500"}
+              hoverColor="#fff"
               onClick={() => {
                 console.log("clicked")
                 window.location.href = "/"

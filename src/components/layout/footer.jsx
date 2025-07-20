@@ -18,7 +18,7 @@ export function Footer() {
           <div className="w-full mx-auto bg-sky-900 grid grid-cols-1 md:grid-cols-3 gap-8 z-50 px-4 md:px-10">
             
             <div className="m-0">
-              <h3 className="text-xl font-bold mb-4">BizMate HR Solutions</h3>
+              <h3 className="text-xl font-bold mb-4">Bizmate HR Solutions</h3>
               <p className="text-sky-100">
                 People, Process, Performance
               </p>
@@ -76,10 +76,10 @@ export function Footer() {
             <div>
               <h4 className="font-bold mb-4">Contact Us</h4>
               <address className="not-italic text-sky-100">
-                <p>123 Business Avenue</p>
-                <p>Corporate District, CA 90001</p>
+                <p>242 Sector-21C</p>
+                <p>Faridabad, 121001</p>
                 <p className="mt-2">Email: info@bizmatehr.com</p>
-                <p>Phone: (555) 123-4567</p>
+                <p>Phone: +91 9289397570</p>
               </address>
               <div className="flex space-x-4 mt-4">
                 <Link href="#" className="text-sky-100 hover:text-white">
@@ -114,7 +114,7 @@ export function Footer() {
           </div>
 
           <div className="border-t border-sky-800 mt-8 pt-8 text-center text-sky-200">
-            <p className="pb-2 md:pb-5">&copy; {new Date().getFullYear()} BizMate HR Solutions. All rights reserved.</p>
+            <p className="pb-2 md:pb-5">&copy; {new Date().getFullYear()} Bizmate HR Solutions. All rights reserved.</p>
           </div>
         </div>
       </footer>

@@ -7,12 +7,14 @@ import { useScroll, useTransform, motion, useInView } from 'motion/react';
 import { useRef } from 'react';
 import { WhyChooseUs } from "../(home)/WhyChooseUs";
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { X, Mail, Linkedin } from "lucide-react";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import { AboutUs } from "../(home)/AboutUs";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
-import TypewriterLoop from "@/components/ui/typewriter-loop";
+import TypewriterLoop from "@/components/ui/typewriter-loop"
+import Faq from "@/components/faq";
+import { faqs } from "../contact/page";
 
 
 const content = [
@@ -23,28 +25,36 @@ const content = [
 
 const team = [
   {
-    name: "Mr. Atul Trikha",
-    title: "Founder",
-    image: image_url,
+    name: "Prashant Prem",
+    title: "Managing Partner & Lead Consultant",
+    image: "assets/pr2.png",
+    email: "example@email.com",
+    linkedin:"https://linkedin.com",
+    bio:"A distinguished C-Level HR professional and Strategic Business Leader, boasting over 35 years of comprehensive experience in Corporate HR. His passion lies in crafting and implementing transformative HR strategies, a proficiency honed through decades of success in strategic leadership roles. With the hands- on experience of leading the HR function he offers strategic insights and solutions for optimal human capital management in HR consulting"
+  },
+  {
+    name: "Atul Trikha",
+    title: "Co-Founder",
+    image: "assets/atul.png",
     email: "example@email.com",
     linkedin:"https://linkedin.com",
     bio:"With a background in mechanical engineering and an illustrious career spanning over 35 years mostly with multinational giant, JCB, Mr. Atul Trikha brings a unique blend of technical expertise and visionary leadership. In 2022, driven by an entrepreneurial spirit, he embarked on a new journey and set up a new venture from scratch which has now commendable turnover of 15 crores, a testament to his strategic acumen and unwavering commitment to excellence. Mr. Tirkha’s expertise and relentless pursuit of innovation positions Bizmate HR Solutions at the forefront of industry evolution"
   },
   {
-    name: "Dr.P Vigneswara llavarasan",
-    title: "Advisor & Consultant",
-    image: image_url,
+    name: "Dr. P. Vigneswara Illvarsan",
+    title: "Advisor",
+    image: "assets/pv.png",
     email: "example@email.com",
     linkedin:"https://linkedin.com",
     bio:"is Abdulaziz Alsagar Chair Professor at the Dept. of Management Studies, IIT, Delhi. He researches and teaches about the interaction of information and communication technologies (ICTs), society & and business. Dr. Ilavarasan is one of the top 2% cited scholars in the world in 2022 as per the Elsevier & Stanford study. He is a recipient of the Outstanding Young Faculty Fellowship Award at IIT Delhi. and Prof. M.N. Srinivas"
   },
   {
-    name: "Prashant Prem",
-    title: "Managing Partner",
-    image: image_url,
+    name: "Anshu Arora",
+    title: "Principal Consultant",
+    image: "assets/anshu.png",
     email: "example@email.com",
     linkedin:"https://linkedin.com",
-    bio:"A distinguished C-Level HR professional and Strategic Business Leader, boasting over 35 years of comprehensive experience in Corporate HR. His passion lies in crafting and implementing transformative HR strategies, a proficiency honed through decades of success in strategic leadership roles. With the hands- on experience of leading the HR function he offers strategic insights and solutions for optimal human capital management in HR consulting"
+    bio: "Anshu has 26 Years of Experience as a Global Facilitator. She has been acknowledged for C-Suite facilitation, Executive Coaching & Speaker Coaching on Indian and International platforms. She is a certified Storyteller, a Train The Trainer Certifier, a Pecha-Kucha (20x20) coach and works closely with the C-Suite, to design simulations that translate into training solutions."
   },
 ]
 
@@ -148,7 +158,7 @@ const BioCard = ({ member, bioContent }) => {
               <img
                 src={member.image}
                 alt={member.name}
-                className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-30"
+                className="w-full h-full  bg-gray-500 transition-opacity duration-300 group-hover:opacity-30"
               />
               
               <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-80 transition-opacity duration-300">
@@ -242,6 +252,30 @@ export default function AboutPage() {
       showPopup(item)
     }
 
+    const faqRef = useRef(null);
+    const [isFaqVisible, setIsFaqVisible] = useState(false);
+
+    useEffect(() => {
+            const observer = new IntersectionObserver(
+                ([entry]) => {
+                    if (entry.isIntersecting) {
+                        setIsFaqVisible(true);
+                        observer.unobserve(entry.target);
+                    }
+                },
+                {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -100px 0px'
+                }
+            );
+    
+            if (faqRef.current) {
+                observer.observe(faqRef.current);
+            }
+    
+            return () => observer.disconnect();
+        }, []);
+
     const container = useRef();
     const { scrollYProgress } = useScroll({
       target: container,
@@ -272,18 +306,39 @@ export default function AboutPage() {
                   <div className="mx-4 md:min-h-[60vh] flex flex-col md:flex-row items-center justify-center z-0 bg-blue-100 rounded-md overflow-y-hidden">
                     <div className="md:w-[40%] w-[90%] mx-auto my-2">
                       <figure className="overflow-hidden mx-auto my-auto">
-                      <img className="object-cover w-72 h-72 mx-auto my-auto" src="/assets/image13.jpeg" alt={"about"} />
+                      <img className="object-cover w-72 h-72 mx-auto my-auto" src="/assets/about_hero2.jpeg" alt={"about"} />
                       </figure>
                     </div>
 
                     <div className="md:w-[60%] w-full my-10">  
                       <h1 className="md:text-5xl text-2xl text-blue-500 mt-2 md:my-4 mx-2 md:font-bold font-semibold text-center md:text-left">
-                        Building Careers.
-                        Building Organisations.
+                        Bizmate HR solutions
                       </h1>
-                      <p className="text-black py-4 px-2 text-thin tracking-tight text-xs md:text-base">
-                        We are an HR Consultancy firm led by Mr. Atul Trikha having more than 30 years of experience of Industry and was inleadership role in a multinational company before donning thecap of <span className="text-blue-600 text-bold">“Entrepreneurship”</span>. Our advisors & consultants includemost experienced Industry veterans from various fields such as <span className="text-blue-600 text-bold">HR</span>, <span className="text-blue-600 text-bold">Research & Development</span>, <span className="text-blue-600 text-bold">Quality</span>, <span className="text-blue-600 text-bold">Marketing</span> etc.
+                      <TextGenerateEffect className={"text-teal-500 text-base md:text-2xl font-semibold mx-1"} 
+                        words={"Empowering Organizations through Talent & Strategy"} 
+                      />
+
+                      <div className="z-20 my-0 md:my-2 tracking-wide">
+                        <h3>
+                        <TypewriterLoop className={"text-xl md:text-2xl font-serif font-semibold text-blue-500 mx-2 px-1" } 
+                          strings={
+                            [ "Specialized in Non-IT Hiring...", 
+                              "Coaching-led HR Strategy...", 
+                              "Trusted by SMEs & Corporates..."
+                            ]} 
+                        />
+                        </h3>
+                      </div>
+                      <p className="text-black py-4 px-2 text-sm lg:text-lg">
+                        <span className="font-semibold">Bizmate HR Solutions</span> is a purpose-driven HR consultancy led by <span className="font-semibold">Prashant Prem, Managing Partner & Lead Consultant</span>, 
+                        with over 30 years of HR leadership experience across leading Indian and multinational organizations. 
+                        As a certified <span className="font-semibold">ICF-PCC coach</span>, Prashant brings a unique blend of strategic HR thinking and coaching excellence to every client engagement.
                       </p>
+
+                      <p className="text-blue-500 py-4 px-2 text-sm md:text-lg">
+                        "Our mission is to be your trusted HR partner—empowering you to adapt and thrive in today&apos;s dynamic workplace."
+                      </p>
+
                     </div>
                   </div>
 
@@ -330,6 +385,24 @@ export default function AboutPage() {
               </div>
             </section>
 
+            {/* FAQs  */}
+            <div 
+                ref={faqRef}
+                className={`max-w-6xl mx-auto transition-all duration-600 ease-out ${
+                    isFaqVisible 
+                        ? 'opacity-100 translate-y-0' 
+                        : 'opacity-0 translate-y-6'
+                }`}
+            >
+                <div className={`md:mx-6 transition-all duration-500 ease-out delay-150 ${
+                    isFaqVisible 
+                        ? 'opacity-100 translate-y-0' 
+                        : 'opacity-0 translate-y-3'
+                }`}>
+                    <Faq faqs={faqs} title={"Platform"} />
+                </div>
+            </div>
+
             {/* Follow Us  */}
             {/* <section>
 
@@ -350,9 +423,9 @@ const HeroSection = ({ scrollYProgress }) => {
     >
 
       <div className="mx-4 md:min-h-[60vh] flex flex-col md:flex-row items-center justify-center z-0 bg-blue-100 rounded-md overflow-y-hidden">
-        <div className="md:w-[40%] w-[90%] mx-auto my-2">
+        <div className="md:w-[40%] w-[90%] my-2 mx-auto md:mx-2">
           <figure className="overflow-hidden mx-auto my-auto">
-          <img className="object-cover" src="/assets/image13.jpeg" alt={"about"} />
+          <img className="object-cover" src="/assets/about_hero1.jpeg" alt={"about"} />
           </figure>
         </div>
 
@@ -366,7 +439,7 @@ const HeroSection = ({ scrollYProgress }) => {
 
           <div className="z-20 my-0 md:my-2 tracking-wide">
             <h3>
-            <TypewriterLoop className={"md:text-xl font-serif font-semibold text-blue-500 text-base mx-2 px-1" } 
+            <TypewriterLoop className={"text-xl md:text-2xl font-serif font-semibold text-blue-500 mx-2 px-1" } 
               strings={
                 [ "Specialized in Non-IT Hiring...", 
                   "Coaching-led HR Strategy...", 
@@ -376,12 +449,18 @@ const HeroSection = ({ scrollYProgress }) => {
             </h3>
           </div>
 
-          <p className="text-black py-4 px-2 text-sm md:text-lg">
-            At Bizmate HR Solutions, we combine 30+ years of HR leadership with global coaching credentials to deliver scalable people strategies. Founded by a certified ICF PCC coach, we help organizations unlock the full potential of their people and performance.
+          <p className="text-black py-4 px-2 text-base md:text-lg">
+            <span className="font-semibold">Bizmate HR Solutions</span> is a purpose-driven HR consultancy led by <span className="font-semibold">Prashant Prem, Managing Partner & Lead Consultant</span>, 
+            with over 30 years of HR leadership experience across leading Indian and multinational organizations. 
+            As a certified <span className="font-semibold">ICF-PCC coach</span>, Prashant brings a unique blend of strategic HR thinking and coaching excellence to every client engagement.
           </p>
 
-          <p className="text-black py-4 px-2 text-sm md:text-lg italic font-semibold">
-            Our mission is to be your trusted HR partner—empowering you to adapt and thrive in today&apos;s dynamic workplace.
+          <p className="text-black py-4 px-2 text-base md:text-lg">
+            We work closely with organizations to enable sustainable growth through <span className="font-semibold">people-focused strategies, leadership capability building</span>, and <span className="font-semibold">culture transformation.</span> Whether you're navigating change, building leadership pipelines, or strengthening your talent ecosystem—we help you shape a resilient, engaged, and future-ready workforce.
+          </p>
+
+          <p className="text-blue-500 py-4 px-2 text-sm font-semibold md:text-lg">
+            "Our mission is to be your trusted HR partner—empowering you to adapt and thrive in today&apos;s dynamic workplace."
           </p>
 
         </div>
@@ -512,7 +591,7 @@ const OurCoreTeam = () => {
       <FadeInOnScroll>
         <h1 className="text-3xl font-bold md:text-5xl text-center z-50">Our Core Team</h1>
       </FadeInOnScroll>
-      <div className="grid grid-col-1 md:grid-cols-3 max-w-6xl mx-auto my-4 md:my-20">
+      <div className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto my-4 md:my-20">
         {team.map((member, index) => (
           <BioCard 
             key={index} 

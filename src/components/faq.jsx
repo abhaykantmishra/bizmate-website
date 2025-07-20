@@ -58,7 +58,7 @@ function FAQItem({ question, answer, index }) {
           className={cn(
             "text-base font-medium transition-colors duration-200 text-left ",
             "text-gray-200 dark:text-gray-300 ",
-            isOpen && "text-gray-900 dark:text-white ",
+            isOpen && "text-black dark:text-white ",
           )}
         >
           {question}
@@ -124,7 +124,7 @@ function FAQItem({ question, answer, index }) {
                   duration: 0.3,
                   ease: "easeOut",
                 }}
-                className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed"
+                className="text-base text-black  dark:text-gray-400 leading-relaxed"
               >
                 {answer}
               </motion.p>

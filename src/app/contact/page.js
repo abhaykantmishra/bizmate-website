@@ -7,28 +7,70 @@ import Faq from "@/components/faq";
 import { CTABookDemo } from "@/components/cta-demo";
 import { BackgroundProvider } from "@/providers/background-provider";
 
-const faqs = [
-    {
-      question: "What makes your platform unique?",
-      answer:
-        "Our platform stands out through its intuitive design, powerful automation capabilities, and seamless integration options. We've focused on creating a user experience that combines simplicity with advanced features.",
-    },
-    {
-      question: "How does the pricing structure work?",
-      answer:
-        "We offer flexible, transparent pricing tiers designed to scale with your needs. Each tier includes a core set of features, with additional capabilities as you move up. All plans start with a 14-day free trial.",
-    },
-    {
-      question: "What kind of support do you offer?",
-      answer:
-        "We provide comprehensive support through multiple channels. This includes 24/7 live chat, detailed documentation, video tutorials, and dedicated account managers for enterprise clients.",
-    },
-    {
-      question: "How can I get started?",
-      answer:
-        "You can get started by signing up for a free trial. Once you've signed up, you'll have access to our platform's full range of features. You can also contact our support team for assistance.",
-    },
-]
+export const faqs = [
+  {
+    question: "What services does Bizmate HR Solutions offer?",
+    answer: "Bizmate offers a range of HR consulting services including Strategic HR Advisory, Leadership Development Programs, Executive Coaching, Recruitment Solutions (specializing in Non-IT industries), Culture & Engagement Consulting, and customized HR interventions."
+  },
+  {
+    question: "Who leads Bizmate HR Solutions?",
+    answer: "Bizmate is led by Mr. Prashant Prem, Managing Partner & Lead Consultant, with over 30 years of HR leadership experience. He is also a certified ICF-PCC coach, blending strategic HR insight with coaching excellence."
+  },
+  {
+    question: "What makes Bizmate different from other HR consultancies?",
+    answer: "Our edge lies in combining deep industry experience with global coaching credentials. We offer strategic yet practical HR solutions tailored to your context, with a strong focus on leadership and cultural transformation."
+  },
+  {
+    question: "Do you offer executive coaching?",
+    answer: "Yes. We offer personalized one-on-one and group executive coaching aligned with ICF standards to support leadership growth, mindset shifts, and performance enhancement."
+  },
+  {
+    question: "What industries do you specialize in for recruitment?",
+    answer: "Bizmate focuses on Non-IT recruitment, serving sectors such as manufacturing, pharmaceuticals, food processing, FMCG, hospitality, and textiles."
+  },
+  {
+    question: "Do you offer training and leadership development programs?",
+    answer: "Yes. We design and deliver customized leadership development journeys for organizations, tailored to different leadership levels and aligned with your business strategy."
+  },
+  {
+    question: "Do you work with both startups and large organizations?",
+    answer: "Yes. Bizmate works with a wide range of clients—from early-stage startups to mid-sized firms and large enterprises—delivering scalable HR solutions suited to their maturity level."
+  },
+  {
+    question: "Can Bizmate help set up HR systems for growing businesses?",
+    answer: "Absolutely. We support growing businesses and promoter-driven companies in establishing HR structures, policies, SOPs, performance management, and culture-building processes."
+  },
+  {
+    question: "Are your services available virtually or only in person?",
+    answer: "We offer both virtual and in-person services, depending on your preferences and location. Many of our coaching and consulting services are effectively delivered online."
+  },
+  {
+    question: "How can I get started with Bizmate?",
+    answer: "You can visit our Contact page or click on “Accelerate with Bizmate” to schedule a consultation. We’ll assess your needs and recommend a customized approach."
+  },
+  {
+    question: "Does Bizmate offer support with labour law compliance?",
+    answer: "Yes. We provide complete support in statutory compliance, including registrations, audits, policy alignment, record maintenance, and updates on applicable central and state labour laws."
+  },
+  {
+    question: "What labour laws should our company be aware of?",
+    answer: "Key laws include the Shops & Establishment Act, Factories Act, EPF & ESI Acts, Payment of Wages Act, POSH Act, Gratuity Act, and CLRA Act, among others. We help identify relevant laws based on your business size and model."
+  },
+  {
+    question: "Do you conduct HR compliance audits?",
+    answer: "Yes. We conduct comprehensive HR and labour law audits, reviewing your HR processes, registers, documentation, and policies to ensure full compliance and risk mitigation."
+  },
+  {
+    question: "Can Bizmate assist in labour inspections or responding to official notices?",
+    answer: "Yes. We offer end-to-end assistance in handling labour inspections, preparing documentation, and replying to statutory notices from authorities."
+  },
+  {
+    question: "Is compliance necessary for small businesses and startups too?",
+    answer: "Absolutely. Compliance is critical from the start. Bizmate helps small businesses meet essential legal requirements cost-effectively and responsibly, building a compliant and trustworthy foundation."
+  }
+];
+
+
 
 export default function ContactPage() {
     const [position, setPosition] = useState({ x: 0, y: 0 })
