@@ -336,7 +336,7 @@ export default function AboutPage() {
                       </p>
 
                       <p className="text-blue-500 py-4 px-2 text-sm md:text-lg">
-                        "Our mission is to be your trusted HR partner—empowering you to adapt and thrive in today&apos;s dynamic workplace."
+                        &quot;Our mission is to be your trusted HR partner—empowering you to adapt and thrive in today&apos;s dynamic workplace.&quot;
                       </p>
 
                     </div>
@@ -456,11 +456,11 @@ const HeroSection = ({ scrollYProgress }) => {
           </p>
 
           <p className="text-black py-4 px-2 text-base md:text-lg">
-            We work closely with organizations to enable sustainable growth through <span className="font-semibold">people-focused strategies, leadership capability building</span>, and <span className="font-semibold">culture transformation.</span> Whether you're navigating change, building leadership pipelines, or strengthening your talent ecosystem—we help you shape a resilient, engaged, and future-ready workforce.
+            We work closely with organizations to enable sustainable growth through <span className="font-semibold">people-focused strategies, leadership capability building</span>, and <span className="font-semibold">culture transformation.</span> Whether you&apos;re navigating change, building leadership pipelines, or strengthening your talent ecosystem—we help you shape a resilient, engaged, and future-ready workforce.
           </p>
 
           <p className="text-blue-500 py-4 px-2 text-sm font-semibold md:text-lg">
-            "Our mission is to be your trusted HR partner—empowering you to adapt and thrive in today&apos;s dynamic workplace."
+            &quot;Our mission is to be your trusted HR partner—empowering you to adapt and thrive in today&apos;s dynamic workplace.&quot;
           </p>
 
         </div>
