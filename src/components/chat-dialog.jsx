@@ -5,7 +5,10 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
+import axios from 'axios';
 
+
+const chatbot_uri = process.env.NEXT_PUBLIC_CHATBOT_URI
 
 const mockQa = [
   { question: "hello", answer: "Hi there! How can I help you today?" },
@@ -32,7 +35,7 @@ export function ChatDialog({ isOpen, onClose }) {
     scrollToBottom();
   }, [messages]);
 
-  const handleSendMessage = (e) => {
+  const handleSendMessage = async (e) => {
     e.preventDefault();
     if (input.trim() === '') return;
 
@@ -40,21 +43,20 @@ export function ChatDialog({ isOpen, onClose }) {
     setMessages((prevMessages) => [...prevMessages, newUserMessage]);
     setInput('');
 
-    // Simulate bot response
-    setTimeout(() => {
-      const lowerCaseInput = input.toLowerCase();
-      let botResponseText = "I'm sorry, I don't understand that question. Can you please rephrase?";
-
-      for (const qa of mockQa) {
-        if (lowerCaseInput.includes(qa.question.toLowerCase())) {
-          botResponseText = qa.answer;
-          break;
-        }
-      }
-
-      const newBotMessage = { id: (Date.now() + 1).toString(), text: botResponseText, sender: 'bot' };
-      setMessages((prevMessages) => [...prevMessages, newBotMessage]);
-    }, 500);
+    try {
+      // bot response
+      const res = await axios.post(chatbot_uri, {
+        "message": input
+      })
+      console.log(res.data);
+      const botMessage = {id:Date.now().toString(), text: res.data?.bot_response, sender: 'bot'};
+      setMessages((prevMessages) => [...prevMessages, botMessage]);
+    } catch (error) {
+      console.log("Something went wrong!", "ERR: ", error)
+      const botMessage = {id:Date.now().toString(), text: error?.message, sender: 'bot'};
+      setMessages((prevMessages) => [...prevMessages, botMessage]);
+    }
+  
   };
 
   return (

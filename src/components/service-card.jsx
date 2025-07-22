@@ -103,7 +103,7 @@ export function ServiceCard ({title,subtitle, description, content, image, url})
                     <img
                         src={image}
                         alt={title}
-                        className="max-h-[300px] md:max-h-fit object-cover"
+                        className="max-h-[200px] md:max-h-fit object-cover"
                     />
                     </div>
                     
@@ -111,9 +111,9 @@ export function ServiceCard ({title,subtitle, description, content, image, url})
 
                 
                 
-                <div className="flex-1 py-0 px-8 max-h-[30rem] md:max-h-[32rem] overflow-y-auto my-auto md:w-[80%]">
-                    <h2 className="text-base md:text-2xl font-bold text-blue-600 mb-0 py-1 text-center relative sticky top-0 bg-white">{title}</h2>
-                    <p className="text-gray-800 pb-2 text-center font-semibold relative sticky top-10 bg-white">{subtitle}</p>
+                <div className="flex-1 py-0 px-8 max-h-[80vh] md:max-h-[32rem] overflow-y-auto my-auto md:w-[80%]">
+                    <h2 className="text-lg md:text-2xl font-bold text-blue-600 mb-0 py-1 text-center sticky top-0 bg-white text-nowrap">{title}</h2>
+                    <p className="text-gray-800 pb-2 text-center font-semibold sticky top-9 md:top-10 bg-white text-base md:text-lg ">{subtitle}</p>
                     <div className="overflow-y-auto prose prose-gray text-sm md:text-base">
                       <span>
                         {content || 
