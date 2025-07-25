@@ -62,7 +62,7 @@ export function ChatDialog({ isOpen, onClose }) {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent
-        className="overflow-y-auto fixed -bottom-20 -right-35 md:-bottom-45 md:-right-45 left-auto top-auto transform-none w-[calc(100vw-32px)] md:w-[400px] h-[450px] md:h-[550px] flex flex-col p-0"
+        className="overflow-y-auto fixed -bottom-20 -right-20 md:-bottom-45 md:-right-45 left-auto top-auto transform-none w-[300px] md:w-[400px] h-[450px] md:h-[550px] flex flex-col p-0"
       >
         <DialogHeader className="p-4 border-b sticky top-0 z-50 bg-white">
           <DialogTitle className="text-blue-600">Chat with us!</DialogTitle>
