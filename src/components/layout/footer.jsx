@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Youtube, Linkedin, Instagram, Facebook, Phone, Mail } from "lucide-react";
 import { company_youtube, company_instagram, company_linkedin, company_facebook } from "@/constant/image";
+import Image from "next/image";
 
 const services = [
   { name: 'Recruitment Solution & Services', href: '/services/recruitment' },
@@ -20,8 +21,19 @@ export function Footer() {
           <div className="w-full mx-auto bg-sky-900 grid grid-cols-1 md:grid-cols-3 gap-8 z-50 px-4 md:px-10">
             
             <div className="m-0">
+              <Link href={"/"}>
+              <div className="w-[250px] h-[100px] mb-4 overflow-hidden">
+                <Image 
+                  src="/assets/big_logo.jpeg"
+                  alt="Bizmate HR Solutions Logo"
+                  width={200}
+                  height={40}
+                  className="w-full h-full object-cover "
+                />
+              </div>
+              </Link>
               <h3 className="text-xl font-bold mb-4">Bizmate HR Solutions</h3>
-              <p className="text-sky-100">
+              <p className="text-blue-300 font-semibold italic">
                 People, Process, Performance
               </p>
             </div>

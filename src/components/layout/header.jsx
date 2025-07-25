@@ -71,20 +71,20 @@ export function Header() {
   }
 
   return (
-    <header className={`h-12 md:h-20 sticky top-0 z-50 w-full border-b border-white/10 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60`}>
+    <header className={`h-12 md:h-15 sticky top-0 z-50 w-full border-b border-white/10 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60`}>
       <nav className="flex h-10 md:h-14 items-center px-4 max-w-[1600px] mx-auto">
-        <Link href="/" className="mr-4 flex items-center space-x-2">
+        <Link href="/" className="mr-4 flex items-center space-x-2 w-[100px] md:w-[150px] h-[30px] md:h-[40px] overflow-hidden">
           <Image
-            // src="/logo.png"
-            src="/globe.svg"
+            src="/assets/big_logo.jpeg"
+            // src="/globe.svg"
             alt="Logo"
-            width={32}
-            height={32}
-            className="rounded-lg"
+            width={120}
+            height={40}
+            className="rounded-none"
           />
-          <span className="text-sm  md:text-lg font-bold sm:inline-block">
+          {/* <span className="text-sm  md:text-lg font-bold sm:inline-block">
             Bizmate HR Solutions
-          </span>
+          </span> */}
         </Link>
 
         {/* Desktop Navigation */}
