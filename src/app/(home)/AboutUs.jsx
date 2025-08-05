@@ -29,7 +29,7 @@ const tabs = [
 	{
 		label: "Idea",
 		content:
-			"We believe that people are the true differentiators of any business. BizMate was born out of the need to align human potential with strategic growth — creating workplaces where both people and profits thrive.",
+			"We believe that people are the true differentiators of any business. Bizmate was born out of the need to align human potential with strategic growth — creating workplaces where both people and profits thrive.",
 		image: "/assets/image2.jpeg", 
 	},
 ];

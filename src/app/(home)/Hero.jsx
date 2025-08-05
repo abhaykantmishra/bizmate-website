@@ -87,7 +87,7 @@ export function Hero() {
           </h3> */}
 
           <p className="font-serif text-base md:text-2xl md:tracking-tight max-w-[35rem] z-20">
-            At BizMate HR Solutions, we combine deep domain expertise with global coaching credentials to deliver people strategies that scale. With over three decades of leadership in HR, our founder—a certified ICF PCC coach—has helped organizations unlock the full potential of their teams.
+            At Bizmate HR Solutions, we combine deep domain expertise with global coaching credentials to deliver people strategies that scale. With over three decades of leadership in HR, our founder—a certified ICF PCC coach—has helped organizations unlock the full potential of their teams.
           </p>
           <p className="font-serif text-base md:text-2xl md:tracking-tight max-w-[35rem] z-20 my-2">  
             <span className="text-blue-500">Our mission?</span> To be your strategic HR partner, empowering you to adapt and thrive in today&apos;s rapidly evolving world of work.

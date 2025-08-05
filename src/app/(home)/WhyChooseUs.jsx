@@ -46,7 +46,7 @@ export function WhyChooseUs() {
     return (
         <section className="md:my-40 mb-0">
 
-           <h2 className="text-2xl md:text-5xl sticky font-bold text-sky-950 text-center mt-40 mb-20">Why Choose BizMate</h2>
+           <h2 className="text-2xl md:text-5xl sticky font-bold text-sky-950 text-center mt-40 mb-20">Why Choose Bizmate</h2>
 
             <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mx-4 md:mx-10 lg:mx-0">
                 {
