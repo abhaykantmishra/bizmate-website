@@ -23,12 +23,12 @@ export function Experience(){
                 </div>
 
                 {/* Count up section */}
-                <div id="count" className="flex md:flex-row flex-col z-20 mx-4 bg-neutral-100 shadow-2xl p-2 rounded-md my-10">
+                {/* <div id="count" className="flex md:flex-row flex-col z-20 mx-4 bg-neutral-100 shadow-2xl p-2 rounded-md my-10">
                     <div className="md:w-[30%] card-hover-line z-20 px-10 mx-0 py-8 md:py-0 flex flex-col items-center justify-center hover:bg-white">
                         <p className="font-bold text-lg md:text-4xl text-blue-600 p-0 m-0">Our Stats</p>
                         <p className="font-bold text-lg md:text-4xl text-blue-600 p-0 m-0">of Success</p>
                     </div>
-                    {/* <Separator orientation="vertical" className="text-black z-20" /> */}
+        
                     <div className="md:w-[70%] grid grid-cols-2 md:grid-cols-3 ">
                         <div className="z-20 px-4 md:px-10 py-4 md:py-10 border-1 border-blue-700 m-1 hover:bg-white">
                             <div className="text-2xl md:text-4xl font-bold text-blue-500">
@@ -67,7 +67,7 @@ export function Experience(){
                             <div className="text-black text-sm md:text-xl">Coaching sessions</div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         </section>
     )

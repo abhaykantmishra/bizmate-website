@@ -116,19 +116,19 @@ export function Header() {
           </SheetTrigger>
           <SheetContent
             side="right"
-            className="w-[85vw] max-w-xs border-white/ bg-white/90 backdrop-blur px-0 pt-0"
+            className="w-[85vw] max-w-xs border-white bg-white backdrop-blur px-0 pt-0"
           >
             <div className="flex h-14 items-center border-b border-white/10 px-4">
               <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-              <Link href="/" className="flex items-center space-x-1 text-sm" onClick={() => setIsOpen(false)}>
+              <Link href="/" className="flex items-center space-x-1 text-sm w-[110px] h-[60px] overflow-hidden" onClick={() => setIsOpen(false)}>
                 <Image
-                  src="/globe.svg"
+                  src="/assets/big_logo.jpeg"
                   alt="bizmate logo"
-                  width={40}
-                  height={40}
-                  className="rounded-lg"
+                  width={110}
+                  height={60}
+                  className="rounded-lg object-cover"
                 />
-                <span className="text-sm font-bold">BizMate HR Solutions</span>
+                {/* <span className="text-sm font-bold">Bizmate HR Solutions</span> */}
               </Link>
             </div>
             <nav className="flex flex-col px-4">
@@ -138,7 +138,7 @@ export function Header() {
                   onClick={() => setIsOpen(false)}
                   key={item.name}
                   href={item.href}
-                  className="font-medium text-black transition-colors hover:text-blue-700"
+                  className="font-medium text-black transition-colors hover:text-blue-700 mb-1 "
                 >
                   {item.name}
                 </Link>
